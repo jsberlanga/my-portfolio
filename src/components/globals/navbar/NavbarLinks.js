@@ -29,8 +29,7 @@ const LinksWrapper = styled.ul`
     display: flex;
     text-transform: capitalize;
     text-decoration: none;
-    border-bottom: 1px solid ${styles.colors.gray};
-    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
     padding: 0.4rem 0.8rem;
     font-weight: 700;
@@ -39,8 +38,8 @@ const LinksWrapper = styled.ul`
     &:hover {
       background: ${styles.colors.yellow};
       color: ${styles.colors.mainLight};
-      padding: 0.4rem 0.8rem 0.4rem 1.2rem;
-      flex-direction: row;
+      transform: scale(1.2);
+      border-radius: 1rem;
     }
   }
   height: ${props => (props.open ? "9rem" : "0")};
@@ -56,6 +55,7 @@ const LinksWrapper = styled.ul`
         background: none;
         color: ${styles.colors.yellow};
         transform: scale(1.2);
+        border-radius: 1rem;
       }
     }
   }

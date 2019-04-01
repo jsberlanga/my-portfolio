@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import Navbar from "./globals/navbar"
+import Navbar from "./globals/Navbar"
 
 const Header = ({ siteTitle }) => (
   <header>

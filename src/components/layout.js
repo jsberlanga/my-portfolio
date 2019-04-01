@@ -1,8 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import { styles } from "../utils"
+import logo from "../images/logo.svg"
 
 import Header from "./header"
 
@@ -20,6 +22,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.2rem;
     color: ${styles.colors.mainDark};
     background: ${styles.colors.mainLight};
+    width: 95vw;
+    margin: 0 auto;
+    position: relative;
   }
 
 p {margin-bottom: 1.15em;}
@@ -31,22 +36,33 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   margin-top: 0;
-  font-size: 3.052em;
+  font-size: 2.488em;
 }
 
-h2 {font-size: 2.441em;}
+h2 {font-size: 2.074em;}
 
-h3 {font-size: 1.953em;}
+h3 {font-size: 1.728em;}
 
-h4 {font-size: 1.563em;}
+h4 {font-size: 1.44em;}
 
-h5 {font-size: 1.25em;}
+h5 {font-size: 1.2em;}
 
 a {
   all: unset;
   cursor: pointer;
 }
 `
+
+const Footer = styled.footer`
+  position: relative;
+  height: 3rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`
+
+const date = new Date().getFullYear()
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -64,12 +80,21 @@ const Layout = ({ children }) => (
         <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
-        <footer>
-          <span>© {new Date().getFullYear()}, </span>
+        <Footer>
+          <div>© {date}, </div>
           <a href="https://www.thesourcode.com">
-            thesourcode.com. All rights reserved{" "}
+            thesourcode.com. All rights reserved
           </a>
-        </footer>
+          <img
+            src={logo}
+            alt="logo"
+            style={{
+              width: "2.4rem",
+              transform: "rotate(180deg)",
+              marginLeft: "0.4rem",
+            }}
+          />
+        </Footer>
       </>
     )}
   />
