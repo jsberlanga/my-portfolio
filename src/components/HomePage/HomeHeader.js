@@ -1,10 +1,24 @@
 import React from "react"
-import styled from "styled-components"
-import img from "../images/reactjs.jpg"
-import { styles } from "../utils"
-import Banner from "../utils/Banner"
+import styled, { keyframes } from "styled-components"
+import img from "../../images/reactjs.jpg"
+import { styles } from "../../utils"
+import HomeBanner from "../../utils/HomeBanner"
+
+const opacity = keyframes`
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+`
 
 const ImageWrapper = styled.div`
+  animation: ${opacity} 1.5s ease;
+
   letter-spacing: 1.5px;
   text-align: center;
   min-height: calc(100vh - 10rem);
@@ -17,7 +31,7 @@ const ImageWrapper = styled.div`
     url(${img});
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-size: cover;
   opacity: 0.9;
   color: ${styles.colors.mainLight};
@@ -52,7 +66,7 @@ const HomeHeader = () => (
         </h3>
       </Section>
       <Section>
-        <Banner bannerTitle="Check what I've been doing" />
+        <HomeBanner bannerTitle="Check what I've been doing" />
       </Section>
     </ImageWrapper>
   </div>

@@ -1,5 +1,6 @@
 import * as styles from "./styles"
-import Banner from "./Banner"
-import Button from "./Button"
+import HomeBanner from "./HomeBanner"
+import { HomeButton } from "./HomeButton"
+import { Button } from "./Button"
 
-export { styles, Banner, Button }
+export { styles, HomeBanner, HomeButton, Button }

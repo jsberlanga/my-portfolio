@@ -2,24 +2,31 @@ import React from "react"
 import styled from "styled-components"
 import { FiArrowRightCircle } from "react-icons/fi"
 
-import { styles } from "../utils"
-
 const StyledButton = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0.4rem 0.8rem;
-  background: ${styles.colors.yellow};
-  border-radius: 1rem;
+  background: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 0) 0%,
+    rgba(245, 245, 245, 0.2) 60%,
+    rgba(245, 245, 245, 0.4) 100%
+  );
+  text-align: right;
+  width: 20rem;
+  margin: 0 auto;
+  border-radius: 5rem;
   cursor: pointer;
-
   .icon {
     transition: all 0.5s ease-in-out;
     position: absolute;
-    margin-left: -10rem;
+    margin-left: -15rem;
     opacity: 0;
   }
   &:hover {
+    border-radius: 2rem;
+
     h5 {
       opacity: 0;
       transition: all 0.4s ease-in-out;
@@ -34,7 +41,7 @@ const StyledButton = styled.div`
   }
 `
 
-const Button = ({ buttonTitle }) => {
+const HomeButton = ({ buttonTitle }) => {
   return (
     <StyledButton>
       <FiArrowRightCircle className="icon" />
@@ -43,4 +50,4 @@ const Button = ({ buttonTitle }) => {
   )
 }
 
-export { Button }
+export { HomeButton }

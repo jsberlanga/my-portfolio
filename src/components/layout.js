@@ -1,12 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { StaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import { styles } from "../utils"
-import logo from "../images/logo.svg"
 
-import Header from "./header"
+import Header from "./Header"
+import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -14,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+  
   body {
     font-family: adobe-garamond-pro, serif;
     font-weight: 400;
@@ -53,55 +51,13 @@ a {
 }
 `
 
-const Footer = styled.footer`
-  position: relative;
-  height: 3rem;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`
-
-const date = new Date().getFullYear()
-
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <Footer>
-          <div>© {date}, </div>
-          <a href="https://www.thesourcode.com">
-            thesourcode.com. All rights reserved
-          </a>
-          <img
-            src={logo}
-            alt="logo"
-            style={{
-              width: "2.4rem",
-              transform: "rotate(180deg)",
-              marginLeft: "0.4rem",
-            }}
-          />
-        </Footer>
-      </>
-    )}
-  />
+  <>
+    <GlobalStyle />
+    <Header />
+    <main>{children}</main>
+    <Footer />
+  </>
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

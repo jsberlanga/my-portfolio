@@ -1,17 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
-const Section = styled.section`
-  display: grid;
-  background: yellow;
-  margin: 2rem auto;
-  height: 100vh;
-`
+const Section = styled.section``
 
 const QuickInfo = () => {
   return (
     <Section>
-      <h1>hello</h1>
+      <Link to="/about">About</Link>
     </Section>
   )
 }
