@@ -1,10 +1,17 @@
 import React from "react"
 import styled from "styled-components"
+import { navigateTo } from "gatsby-link"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import { styles } from "../utils"
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
 
 const StyledForm = styled.div`
   * {
@@ -118,72 +125,82 @@ const Center = styled.div`
   position: relative;
 `
 
-const Contact = () => (
-  <Layout>
-    <SEO title="Contact" keywords={[`gatsby`, `application`, `react`]} />
-    <Center>
-      <h1>Contact</h1>
-      <h4 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h4>
-      <StyledForm
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <input
-          className="form-input-name"
-          name="name"
-          placeholder="Name"
-          type="text"
-        />
-        <input
-          className="form-input-email"
-          name="email"
-          placeholder="Email"
-          type="email"
-        />
-        <input
-          className="form-input-phone"
-          name="phone"
-          placeholder="Phone Number"
-          type="text"
-        />
-        <textarea
-          className="form-input-message"
-          name="message"
-          placeholder="Message"
-        />
-        <button type="submit" className="form-button" />
-      </StyledForm>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
-      <form
-        name="contact"
-        method="POST"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-      >
-        <p class="hidden">
-          <label>
-            Don’t fill this out if you're human: <input name="bot-field" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Email: <input type="text" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message" />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-    </Center>
-  </Layout>
-)
+class Contact extends React.Component {
+  state = {}
+  handleSubmit = e => {
+    console.log(e)
+    e.preventDefault()
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state,
+      }),
+    })
+      .then(() => navigateTo(form.getAttribute("action")))
+      .catch(error => alert(error))
+  }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+  render() {
+    return (
+      <Layout>
+        <SEO title="Contact" keywords={[`gatsby`, `application`, `react`]} />
+        <Center>
+          <h1>Contact</h1>
+          <h4 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h4>
+          <StyledForm
+            name="contact"
+            method="post"
+            action="/thanks/"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={this.handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>
+                Don’t fill this out:{" "}
+                <input name="bot-field" onChange={this.handleChange} />
+              </label>
+            </p>
+            <input
+              className="form-input-name"
+              name="name"
+              placeholder="Name"
+              type="text"
+              onChange={this.handleChange}
+            />
+            <input
+              className="form-input-email"
+              name="email"
+              placeholder="Email"
+              type="email"
+              onChange={this.handleChange}
+            />
+            <input
+              className="form-input-phone"
+              name="phone"
+              placeholder="Phone Number"
+              type="text"
+              onChange={this.handleChange}
+            />
+            <textarea
+              className="form-input-message"
+              name="message"
+              placeholder="Message"
+              onChange={this.handleChange}
+            />
+            <button type="submit" className="form-button" />
+          </StyledForm>
+          <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
+        </Center>
+      </Layout>
+    )
+  }
+}
 
 export default Contact
