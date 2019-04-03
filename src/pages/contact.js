@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 import { styles } from "../utils"
 
-const Form = styled.form`
+const StyledForm = styled.div`
   * {
     all: unset;
   }
@@ -124,7 +124,7 @@ const Contact = () => (
     <Center>
       <h1>Contact</h1>
       <h4 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h4>
-      <Form
+      <StyledForm
         name="contact"
         method="POST"
         data-netlify="true"
@@ -153,9 +153,30 @@ const Contact = () => (
           name="message"
           placeholder="Message"
         />
-        <button className="form-button" />
-      </Form>
+        <button type="submit" className="form-button" />
+      </StyledForm>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>
+            Your Name: <input type="text" name="name" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your Email: <input type="email" name="email" />
+          </label>
+        </p>
+        <p />
+        <p>
+          <label>
+            Message: <textarea name="message" />
+          </label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
     </Center>
   </Layout>
 )
