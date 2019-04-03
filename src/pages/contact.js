@@ -13,7 +13,7 @@ function encode(data) {
     .join("&")
 }
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   * {
     all: unset;
   }
@@ -161,12 +161,12 @@ class Contact extends React.Component {
             onSubmit={this.handleSubmit}
           >
             <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
+            {/* <p hidden>
               <label>
                 Don’t fill this out:{" "}
                 <input name="bot-field" onChange={this.handleChange} />
               </label>
-            </p>
+            </p> */}
             <input
               className="form-input-name"
               name="name"
