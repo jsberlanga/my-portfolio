@@ -130,6 +130,7 @@ const Contact = () => (
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <input
           className="form-input-name"
           name="name"
