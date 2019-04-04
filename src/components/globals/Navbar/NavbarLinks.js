@@ -31,7 +31,6 @@ const LinksWrapper = styled.ul`
     text-decoration: none;
     justify-content: center;
     cursor: pointer;
-    padding: 0.4rem 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     ${styles.transitionDefault};

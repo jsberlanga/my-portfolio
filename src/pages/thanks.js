@@ -1,8 +1,17 @@
 import React from "react"
+import { Link } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+import { HeaderSection } from "../utils"
 
 export default () => (
-  <div>
-    <h1>Thank you!</h1>
-    <p>This is a custom thank you page for form submissions</p>
-  </div>
+  <Layout>
+    <HeaderSection>
+      <SEO title="Thank You" keywords={[`gatsby`, `application`, `react`]} />
+      <h1>Thanks!</h1>
+      <p>I'll get back to you as soon as possible!</p>
+      <Link to="/">Go back to my page</Link>
+    </HeaderSection>
+  </Layout>
 )

@@ -56,7 +56,7 @@ const Gallery = () => (
                       eos illo veniam odio eaque quos quis ipsa doloribus,
                       voluptatem exercitationem, delectus accusamus repellendus?
                     </p>
-                    <Button buttonTitle="...more" />
+                    <Button buttonTitle="...more" className="fromLeft" />
                   </div>
                 </ImageContainer>
               </div>

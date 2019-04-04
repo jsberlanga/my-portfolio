@@ -26,7 +26,7 @@ const IconsWrapper = styled.div`
   display: none;
   .icon {
     font-size: 1.5rem;
-    margin: 0 1rem;
+    margin: 0 0.4rem;
     ${styles.transitionDefault};
   }
   .icon:hover {

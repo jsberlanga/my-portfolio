@@ -5,7 +5,7 @@ import { navigateTo } from "gatsby-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { styles } from "../utils"
+import { styles, HeaderSection } from "../utils"
 
 function encode(data) {
   return Object.keys(data)
@@ -62,7 +62,7 @@ const StyledForm = styled.form`
   }
 
   button {
-    border-radius: 0rem;
+    border-radius: 5rem;
     background: ${styles.colors.yellow};
     color: ${styles.colors.mainLight};
     padding: 1.7rem;
@@ -72,7 +72,7 @@ const StyledForm = styled.form`
     opacity: 0.9;
     position: relative;
     transition: all 0.3s;
-    box-shadow: 1px 1px 4px -3px black;
+    box-shadow: 1px 1px 6px -2px gray;
     &:hover {
       background-color: ${styles.colors.green};
     }
@@ -86,7 +86,7 @@ const StyledForm = styled.form`
     &:hover:before {
       opacity: 0;
       transition: all 1s;
-      transform: translate(7rem);
+      transform: translate(5.7rem);
     }
     &:after {
       content: ">>>";
@@ -99,7 +99,7 @@ const StyledForm = styled.form`
     }
     &:hover:after {
       opacity: 1;
-      transform: translate(7rem);
+      transform: translate(5.7rem);
     }
   }
   .form-input-name {
@@ -121,8 +121,6 @@ const StyledForm = styled.form`
 
 const Center = styled.div`
   text-align: center;
-  min-height: 76vh;
-  position: relative;
 `
 
 class Contact extends React.Component {
@@ -149,55 +147,52 @@ class Contact extends React.Component {
     return (
       <Layout>
         <SEO title="Contact" keywords={[`gatsby`, `application`, `react`]} />
-        <Center>
-          <h1>Contact</h1>
-          <h4 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h4>
-          <StyledForm
-            name="contact"
-            method="post"
-            action="/thanks/"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={this.handleSubmit}
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            {/* <p hidden>
-              <label>
-                Don’t fill this out:{" "}
-                <input name="bot-field" onChange={this.handleChange} />
-              </label>
-            </p> */}
-            <input
-              className="form-input-name"
-              name="name"
-              placeholder="Name"
-              type="text"
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-input-email"
-              name="email"
-              placeholder="Email"
-              type="email"
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-input-phone"
-              name="phone"
-              placeholder="Phone Number"
-              type="text"
-              onChange={this.handleChange}
-            />
-            <textarea
-              className="form-input-message"
-              name="message"
-              placeholder="Message"
-              onChange={this.handleChange}
-            />
-            <button type="submit" className="form-button" />
-          </StyledForm>
-          <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
-        </Center>
+        <HeaderSection>
+          <Center>
+            <h5 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h5>
+            <h1>Contact me</h1>
+
+            <StyledForm
+              name="contact"
+              method="post"
+              action="/thanks/"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={this.handleSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input
+                className="form-input-name"
+                name="name"
+                placeholder="Name"
+                type="text"
+                onChange={this.handleChange}
+              />
+              <input
+                className="form-input-email"
+                name="email"
+                placeholder="Email"
+                type="email"
+                onChange={this.handleChange}
+              />
+              <input
+                className="form-input-phone"
+                name="phone"
+                placeholder="Phone Number"
+                type="text"
+                onChange={this.handleChange}
+              />
+              <textarea
+                className="form-input-message"
+                name="message"
+                placeholder="Message"
+                onChange={this.handleChange}
+              />
+              <button type="submit" className="form-button" />
+            </StyledForm>
+            <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
+          </Center>
+        </HeaderSection>
       </Layout>
     )
   }
