@@ -5,12 +5,13 @@ import logo from "../images/logo.svg"
 const date = new Date().getFullYear()
 
 const StyledFooter = styled.footer`
-  position: relative;
-  height: 3rem;
-  margin-top: 1rem;
+  position: absolute;
+  height: 2.5rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  bottom: 0;
+  right: 0;
 `
 const Footer = () => (
   <StyledFooter>

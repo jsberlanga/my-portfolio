@@ -8,7 +8,6 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HomeHeader />
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>
 )
 

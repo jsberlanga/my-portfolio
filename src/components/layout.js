@@ -1,5 +1,5 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import { styles } from "../utils"
 
 import Header from "./Header"
@@ -20,9 +20,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.2rem;
     color: ${styles.colors.mainDark};
     background: ${styles.colors.mainLight};
-    width: 95vw;
-    margin: 0 auto;
-    position: relative;
   }
 
 p {margin-bottom: 1.15em;}
@@ -51,12 +48,22 @@ a {
 }
 `
 
+const PageContainer = styled.div`
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+  width: 95vw;
+  padding-bottom: 2.5rem;
+`
+
 const Layout = ({ children }) => (
   <>
     <GlobalStyle />
-    <Header />
-    <main>{children}</main>
-    <Footer />
+    <PageContainer>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </PageContainer>
   </>
 )
 

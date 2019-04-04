@@ -18,7 +18,6 @@ const opacity = keyframes`
 
 const ImageWrapper = styled.div`
   animation: ${opacity} 1.5s ease;
-
   letter-spacing: 1.5px;
   text-align: center;
   min-height: calc(100vh - 10rem);
