@@ -1,20 +1,23 @@
-import React from "react"
+import React, { Component } from "react"
 import { StaticQuery, graphql } from "gatsby"
+import ReactModal from "react-modal"
 import styled from "styled-components"
-import Img from "gatsby-image"
 
-import { Button } from "../../utils"
+import DudaTransportProject from "./projects/dudatransport"
 
 const GET_IMAGES = graphql`
   {
-    getImages: allFile(filter: { relativeDirectory: { eq: "portfolio" } }) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 5000) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
+    imageOne: file(relativePath: { eq: "portfolio/1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    imageTwo: file(relativePath: { eq: "portfolio/2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
@@ -30,42 +33,66 @@ const ImageContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 `
-const Gallery = () => (
-  <StaticQuery
-    query={GET_IMAGES}
-    render={data => {
-      const images = data.getImages.edges
-      return (
-        <ImageContainer>
-          {images.map(({ node }, index) => {
-            return (
-              <div>
-                <ImageContainer>
-                  <Img
-                    style={{
-                      borderRadius: "1rem",
-                      boxShadow: "1px 1px 10px -5px black",
-                    }}
-                    key={index}
-                    fluid={node.childImageSharp.fluid}
-                  />
-                  <div>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Beatae modi quod distinctio non ullam officiis, ratione
-                      eos illo veniam odio eaque quos quis ipsa doloribus,
-                      voluptatem exercitationem, delectus accusamus repellendus?
-                    </p>
-                    <Button buttonTitle="...more" className="fromLeft" />
-                  </div>
-                </ImageContainer>
-              </div>
-            )
-          })}
-        </ImageContainer>
-      )
-    }}
-  />
-)
 
-export default Gallery
+const CloseButton = styled.button`
+  background: #eac100;
+  padding: 1rem;
+  border-radius: 0.1rem;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+`
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "-40%",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    background: "#f5f5f5",
+    borderRadius: "1rem",
+  },
+}
+
+const imageStyles = {
+  borderRadius: "1rem",
+  boxShadow: "1px 1px 10px -5px black",
+  marginBottom: "2rem",
+}
+
+ReactModal.defaultStyles.overlay.backgroundColor = "rgba(65, 79, 93, 0.5)"
+
+class Gallery extends Component {
+  state = {
+    showModal: false,
+  }
+  handleOpenModal = () => {
+    this.setState({ showModal: true })
+  }
+  handleCloseModal = () => {
+    this.setState({ showModal: false })
+  }
+  render() {
+    return (
+      <StaticQuery
+        query={GET_IMAGES}
+        render={data => {
+          return (
+            <ImageContainer>
+              <DudaTransportProject
+                showModal={this.state.showModal}
+                handleOpenModal={this.handleOpenModal}
+                handleCloseModal={this.handleCloseModal}
+              />
+              <DudaTransportProject />
+            </ImageContainer>
+          )
+        }}
+      />
+    )
+  }
+}
+
+export { Gallery as default, CloseButton, customStyles, imageStyles }
