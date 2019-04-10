@@ -2,25 +2,53 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import ReactModal from "react-modal"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
-import { Button } from "../../../../utils"
+import { FaGithub, FaRegWindowRestore, FaRegLaughBeam } from "react-icons/fa"
+
+import { Button, HeaderSection, styles } from "../../../../utils"
 import { CloseButton, customStyles, imageStyles } from "../../Gallery"
 
 const GET_IMAGES = graphql`
   {
-    imageOne: file(relativePath: { eq: "portfolio/1.jpg" }) {
+    main: file(relativePath: { eq: "portfolio/dudatransport/main.png" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    imageTwo: file(relativePath: { eq: "portfolio/2.jpg" }) {
+    landing: file(relativePath: { eq: "portfolio/dudatransport/landing.png" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
+    }
+    contact: file(relativePath: { eq: "portfolio/dudatransport/contact.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    thanks: file(relativePath: { eq: "portfolio/dudatransport/thanks.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`
+
+const Icons = styled.div`
+  font-size: 4rem;
+  * {
+    cursor: pointer;
+    margin: 0 1rem;
+    :hover {
+      color: ${styles.colors.yellow};
     }
   }
 `
@@ -37,20 +65,29 @@ const DudaTransportProject = ({
     render={data => {
       return (
         <>
-          <Img
-            style={imageStyles}
-            fluid={data.imageOne.childImageSharp.fluid}
-          />
+          <Img style={imageStyles} fluid={data.main.childImageSharp.fluid} />
           <div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
-              modi quod distinctio non ullam officiis, ratione eos illo veniam
-              odio eaque quos quis ipsa doloribus, voluptatem exercitationem,
-              delectus accusamus repellendus?
-            </p>
-            <div onClick={handleOpenModal}>
-              <Button buttonTitle="...more" className="fromLeft" />
+            <h3>Live website - Duda Transport</h3>
+            <div>
+              <h5 style={{ fontStyle: "italic", margin: "0.4rem 0" }}>
+                The technology behind:
+              </h5>
+              <ul>
+                <li>React</li>
+                <li>Gatsby</li>
+                <li>Styled components</li>
+                <li>Graphql</li>
+                <li>Netlify</li>
+              </ul>
             </div>
+            <div onClick={handleOpenModal}>
+              <Button
+                width="20rem"
+                buttonTitle="...more"
+                className="fromLeft"
+              />
+            </div>
+
             <ReactModal
               isOpen={showModal}
               contentLabel="Example Modal"
@@ -58,25 +95,69 @@ const DudaTransportProject = ({
               style={customStyles}
             >
               <CloseButton onClick={handleCloseModal}>X</CloseButton>
-              <h1>Duda Transport - Project</h1>
+              <HeaderSection>
+                <h5 style={{ fontStyle: "italic" }}>
+                  Go ahead and check the code & the website
+                </h5>
+                <Icons>
+                  <a
+                    href="https://github.com/jsberlanga/gatsby-dudatransport"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="http://www.dudatransport.com/"
+                    rel="noopener noreferrer"
+                  >
+                    <FaRegWindowRestore />
+                  </a>
+                </Icons>
+                <h1>Duda Transport</h1>
+                <div>
+                  For creating this website I used the following technology:
+                </div>
+                <ul style={{ fontStyle: "italic" }}>
+                  <li>
+                    <span style={{ fontWeight: "700" }}>React</span>, simply
+                    because I love it. <FaRegLaughBeam />
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: "700" }}>Gatsby</span> as the
+                    static site generator
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: "700" }}>Styled components</span>{" "}
+                    for styling React components
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: "700" }}>Graphql</span> barely
+                    for grabing image data
+                  </li>
+                  <li>
+                    <span style={{ fontWeight: "700" }}>Netlify</span> for
+                    deploying and management{" "}
+                  </li>
+                </ul>
+              </HeaderSection>
+              <HeaderSection>
+                <h5 style={{ fontStyle: "italic" }}>
+                  You can find below some screenshots of the website:
+                </h5>
+              </HeaderSection>
+
               <Img
                 style={imageStyles}
-                fluid={data.imageOne.childImageSharp.fluid}
+                fluid={data.landing.childImageSharp.fluid}
               />
               <Img
                 style={imageStyles}
-                fluid={data.imageTwo.childImageSharp.fluid}
+                fluid={data.contact.childImageSharp.fluid}
               />
               <Img
                 style={imageStyles}
-                fluid={data.imageOne.childImageSharp.fluid}
+                fluid={data.thanks.childImageSharp.fluid}
               />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Tenetur illo rem iure molestiae, corporis deleniti aliquam
-                debitis quo animi deserunt autem laudantium delectus magni vel
-                at dolores! Quod, velit nulla.
-              </p>
             </ReactModal>
           </div>
         </>

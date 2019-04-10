@@ -32,24 +32,36 @@ const ImageContainer = styled.div`
   @media (min-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  li {
+    margin-left: 1rem;
+  }
+  img {
+    width: 2rem;
+  }
+  text-align: center;
 `
 
 const CloseButton = styled.button`
   background: #eac100;
+  color: #10316b;
   padding: 1rem;
   border-radius: 0.1rem;
   border: none;
   font-weight: 700;
   cursor: pointer;
+  :hover {
+    background: #10316b;
+    color: #eac100;
+  }
 `
 
 const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    right: "auto",
+    right: "-30%",
     bottom: "-40%",
-    marginRight: "-50%",
+    marginRight: "1rem",
     transform: "translate(-50%, -50%)",
     background: "#f5f5f5",
     borderRadius: "1rem",

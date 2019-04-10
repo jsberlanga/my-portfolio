@@ -46,6 +46,9 @@ a {
   all: unset;
   cursor: pointer;
 }
+li {
+  list-style: none
+}
 `
 
 const PageContainer = styled.div`

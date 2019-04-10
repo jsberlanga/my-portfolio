@@ -22,9 +22,6 @@ const defaultLinks = [
 ]
 
 const LinksWrapper = styled.ul`
-  li {
-    list-style-type: none;
-  }
   .nav-link {
     display: flex;
     text-transform: capitalize;

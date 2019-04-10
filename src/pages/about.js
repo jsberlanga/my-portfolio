@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 
 import SEO from "../components/seo"
-import { StyledButton, HeaderSection } from "../utils"
+import { styles, StyledButton, HeaderSection } from "../utils"
 
 import apollo from "../images/icons/apollo.svg"
 import graphql from "../images/icons/graphql.svg"
@@ -28,7 +28,6 @@ const TechnologiesSection = styled.section`
   display: grid;
   grid-template-columns: 30% 35% 35%;
   li {
-    list-style: none;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -67,9 +66,14 @@ const About = () => (
       <h1>Dig a little deeper</h1>
       <StyledButton
         width="7rem"
-        style={{ height: "7rem", justifyContent: "center", marginTop: 0 }}
+        style={{
+          height: "7rem",
+          justifyContent: "center",
+          marginTop: 0,
+          boxShadow: `1px 1px 7px -3px ${styles.colors.darkGray}`,
+        }}
       >
-        <h5>resume</h5>
+        <h5 style={{ fontWeight: 400, fontStyle: "italic" }}>my resume</h5>
         <FiDownload className="fromTop" />
       </StyledButton>
     </HeaderSection>
