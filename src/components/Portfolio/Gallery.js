@@ -4,6 +4,7 @@ import ReactModal from "react-modal"
 import styled from "styled-components"
 
 import DudaTransportProject from "./projects/dudatransport"
+import SourdoughBakersProject from "./projects/sourdoughbakers"
 
 const GET_IMAGES = graphql`
   {
@@ -98,7 +99,11 @@ class Gallery extends Component {
                 handleOpenModal={this.handleOpenModal}
                 handleCloseModal={this.handleCloseModal}
               />
-              <DudaTransportProject />
+              <SourdoughBakersProject
+                showModal={this.state.showModal}
+                handleOpenModal={this.handleOpenModal}
+                handleCloseModal={this.handleCloseModal}
+              />
             </ImageContainer>
           )
         }}

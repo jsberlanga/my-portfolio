@@ -74,7 +74,7 @@ const StyledForm = styled.form`
     transition: all 0.3s;
     box-shadow: 1px 1px 6px -2px gray;
     &:hover {
-      background-color: ${styles.colors.green};
+      background-color: #e4508f;
     }
     &:before {
       transition: all 1s;

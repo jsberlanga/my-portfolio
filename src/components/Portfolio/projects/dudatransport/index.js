@@ -70,20 +70,16 @@ const DudaTransportProject = ({
             <h3>Live website - Duda Transport</h3>
             <div>
               <h5 style={{ fontStyle: "italic", margin: "0.4rem 0" }}>
-                The technology behind:
+                The tech behind:
               </h5>
-              <ul>
-                <li>React</li>
-                <li>Gatsby</li>
-                <li>Styled components</li>
-                <li>Graphql</li>
-                <li>Netlify</li>
-              </ul>
+              <p>
+                Reactjs, Gatsby, Styled Components, Netlify, among others...
+              </p>
             </div>
             <div onClick={handleOpenModal}>
               <Button
                 width="20rem"
-                buttonTitle="...more"
+                buttonTitle="know more"
                 className="fromLeft"
               />
             </div>
