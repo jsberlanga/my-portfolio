@@ -1,13 +1,13 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
-import Gallery from "../components/Portfolio/Gallery"
+import Portfolio from "../../components/Portfolio"
 
-import { HeaderSection } from "../utils"
+import { HeaderSection } from "../../utils"
 
-const Portfolio = () => (
+export default () => (
   <Layout>
     <SEO title="Portfolio" keywords={[`gatsby`, `application`, `react`]} />
     <HeaderSection>
@@ -16,9 +16,7 @@ const Portfolio = () => (
       </h5>
       <h1>My work</h1>
     </HeaderSection>
-    <Gallery />
+    <Portfolio />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>
 )
-
-export default Portfolio

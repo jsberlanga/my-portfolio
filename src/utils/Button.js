@@ -64,4 +64,18 @@ const Button = ({ buttonTitle, width, className }) => {
   )
 }
 
-export { Button, StyledButton }
+const CloseButton = styled.button`
+  background: #eac100;
+  color: #10316b;
+  padding: 1rem;
+  border-radius: 0.1rem;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  :hover {
+    background: #10316b;
+    color: #eac100;
+  }
+`
+
+export { Button, StyledButton, CloseButton }
