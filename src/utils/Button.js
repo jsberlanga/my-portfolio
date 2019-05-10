@@ -5,14 +5,13 @@ import { FiArrowRightCircle } from "react-icons/fi"
 import { styles } from "../utils"
 
 const StyledButton = styled.div`
-  margin: 2rem auto 0;
+  margin: 2rem auto;
   width: ${props => props.width};
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0.4rem 0.8rem;
   background: ${styles.colors.yellow};
-  border-radius: 5rem;
   cursor: pointer;
 
   .fromLeft {
@@ -35,9 +34,9 @@ const StyledButton = styled.div`
     }
   }
   .fromTop {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     position: absolute;
-    margin-top: -10rem;
+    margin-top: -4rem;
     opacity: 0;
   }
   &:hover {

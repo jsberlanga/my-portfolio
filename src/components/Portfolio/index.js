@@ -28,11 +28,15 @@ const GET_IMAGES = graphql`
   }
 `
 const imageStyles = {
-  borderRadius: "1rem",
-  boxShadow: "1px 1px 10px -5px black",
+  boxShadow: "1px 1px 10px -5px lightgrey",
+  marginBottom: "2rem",
 }
 
 const GalleryContainer = styled.div`
+  .card {
+    background: #eeeeee;
+    box-shadow: 7px 7px 10px -10px #414f5d;
+  }
   text-align: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -41,22 +45,16 @@ const GalleryContainer = styled.div`
   li {
     margin-left: 1rem;
   }
-
   h4 {
     font-style: italic;
     margin: 0.4rem 0;
   }
   .text-more {
-    display: grid;
-    align-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
   @media (min-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 5rem;
-    .text-more {
-      margin-bottom: 0rem;
-    }
+    grid-gap: 5rem;
   }
 `
 
@@ -66,7 +64,7 @@ const Portfolio = () => (
     render={data => {
       return (
         <GalleryContainer>
-          <>
+          <div className="card">
             <Img
               style={imageStyles}
               fluid={data.dudatransportImage.childImageSharp.fluid}
@@ -89,8 +87,8 @@ const Portfolio = () => (
                 </Link>
               </div>
             </div>
-          </>
-          <>
+          </div>
+          <div className="card">
             <Img
               style={imageStyles}
               fluid={data.sourdoughbakersImage.childImageSharp.fluid}
@@ -112,7 +110,23 @@ const Portfolio = () => (
                 />
               </Link>
             </div>
-          </>
+          </div>
+          <div className="card">
+            <div className="text-more">
+              <h2>Coming soon - Skinny Alfredo</h2>
+              <div>
+                <h4>The tech behind:</h4>
+                <p>Pure and simple ES6 Javascript</p>
+              </div>
+              <Link to="/portfolio/skinnyalfredo">
+                <Button
+                  width="20rem"
+                  buttonTitle="know more"
+                  className="fromLeft"
+                />
+              </Link>
+            </div>
+          </div>
         </GalleryContainer>
       )
     }}

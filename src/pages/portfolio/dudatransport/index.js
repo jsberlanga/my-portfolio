@@ -64,10 +64,15 @@ export default () => (
         <a
           href="https://github.com/jsberlanga/gatsby-dudatransport"
           rel="noopener noreferrer"
+          target="_blank"
         >
           <FaGithub />
         </a>
-        <a href="http://www.dudatransport.com/" rel="noopener noreferrer">
+        <a
+          href="http://www.dudatransport.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <FaRegWindowRestore />
         </a>
       </div>
@@ -102,7 +107,20 @@ export default () => (
                 style={imageStyles}
                 fluid={data.thanks.childImageSharp.fluid}
               />
-              <Link to="/portfolio">Go back to my portfolio</Link>
+              <p>
+                <Link to="/portfolio">
+                  Go back to my{" "}
+                  <span
+                    style={{
+                      color: "#eac100",
+                      borderBottom: "2px solid #eac100",
+                      cursor: "pointer",
+                    }}
+                  >
+                    portfolio
+                  </span>
+                </Link>
+              </p>
             </div>
           )
         }}

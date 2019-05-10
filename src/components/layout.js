@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${styles.colors.mainLight};
   }
 
-p {margin-bottom: 1.15em;}
+p {margin-bottom: 0.85em;}
 
 h1, h2, h3, h4, h5 {
   font-weight: 700;
@@ -44,7 +44,6 @@ h5 {font-size: 1.2em;}
 
 a {
   all: unset;
-  cursor: pointer;
 }
 li {
   list-style: none
@@ -55,6 +54,7 @@ const PageContainer = styled.div`
   position: relative;
   min-height: 100vh;
   margin: 0 auto;
+  max-width: 80rem;
   width: 95vw;
   padding-bottom: 2.5rem;
 `

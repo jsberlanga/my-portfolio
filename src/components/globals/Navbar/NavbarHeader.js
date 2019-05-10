@@ -25,7 +25,11 @@ const HeaderWrapper = styled.div`
 const NavbarLogo = ({ handleNavbar }) => (
   <HeaderWrapper>
     <Link to="/">
-      <img src={logo} alt="personal logo" style={{ width: "4rem" }} />
+      <img
+        src={logo}
+        alt="personal logo"
+        style={{ width: "4rem", cursor: "pointer" }}
+      />
     </Link>
     <FaAlignRight
       className="toggle-icon"

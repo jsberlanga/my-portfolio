@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import img from "../../images/reactjs.jpg"
+import img from "../../images/reactjs.png"
 import { styles } from "../../utils"
 import HomeBanner from "../../utils/HomeBanner"
 

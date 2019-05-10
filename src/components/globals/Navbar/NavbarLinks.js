@@ -28,13 +28,14 @@ const LinksWrapper = styled.ul`
     text-decoration: none;
     justify-content: center;
     cursor: pointer;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+    font-size: 1.5rem;
     ${styles.transitionDefault};
     &:hover {
       background: ${styles.colors.yellow};
       color: ${styles.colors.mainLight};
-      transform: scale(1.2);
+      transform: scale(1.15);
       border-radius: 1rem;
     }
   }

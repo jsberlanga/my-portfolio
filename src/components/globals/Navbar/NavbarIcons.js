@@ -28,6 +28,7 @@ const IconsWrapper = styled.div`
     font-size: 1.5rem;
     margin: 0 0.4rem;
     ${styles.transitionDefault};
+    cursor: pointer;
   }
   .icon:hover {
     color: ${styles.colors.yellow};

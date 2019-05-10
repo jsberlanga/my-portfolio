@@ -72,7 +72,7 @@ export default () => (
         keywords={[`gatsby`, `application`, `react`]}
       />
       <h5>A bread selling webapp</h5>
-      <h1>The Sourdough Bakers Project</h1>
+      <h1>Sourdough Bakers Project</h1>
     </HeaderSection>
 
     <ProjectWrapper>
@@ -81,12 +81,14 @@ export default () => (
         <a
           href="https://github.com/jsberlanga/sourdough-bakers"
           rel="noopener noreferrer"
+          target="_blank"
         >
           <FaGithub />
         </a>
         <a
           href="https://sourdough-bakers.herokuapp.com/"
           rel="noopener noreferrer"
+          target="_blank"
         >
           <FaRegWindowRestore />
         </a>
@@ -143,6 +145,7 @@ export default () => (
                     style={{
                       color: "#eac100",
                       borderBottom: "2px solid #eac100",
+                      cursor: "pointer",
                     }}
                   >
                     portfolio
