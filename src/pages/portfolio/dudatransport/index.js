@@ -51,7 +51,7 @@ export default () => (
   <Layout>
     <HeaderSection>
       <SEO
-        title="DudaTransport Project"
+        title="Duda Transport Project"
         keywords={[`gatsby`, `application`, `react`]}
       />
       <h5>A transport family business website</h5>
