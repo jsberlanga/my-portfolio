@@ -30,8 +30,7 @@ const LinksWrapper = styled.ul`
     cursor: pointer;
     font-weight: 600;
     letter-spacing: -1.2px;
-    font-size: 1.5rem;
-    ${styles.transitionDefault};
+    font-size: 1.6rem;
     &:hover {
       background: ${styles.colors.yellow};
       color: ${styles.colors.mainLight};
