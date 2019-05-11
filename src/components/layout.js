@@ -46,7 +46,8 @@ a {
   all: unset;
 }
 li {
-  list-style: none
+  list-style: none;
+  font-size: 1.6rem;
 }
 `
 
@@ -56,7 +57,7 @@ const PageContainer = styled.div`
   margin: 0 auto;
   max-width: 80rem;
   width: 95vw;
-  padding-bottom: 2.5rem;
+  padding-bottom: 4.5rem;
 `
 
 const Layout = ({ children }) => (

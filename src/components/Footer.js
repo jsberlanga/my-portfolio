@@ -22,6 +22,7 @@ const Footer = () => (
           width: "2.4rem",
           transform: "rotate(180deg)",
           marginLeft: "0.4rem",
+          marginBottom: "-0.4rem",
         }}
       />
     </div>

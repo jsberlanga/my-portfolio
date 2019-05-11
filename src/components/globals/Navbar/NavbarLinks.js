@@ -30,7 +30,6 @@ const LinksWrapper = styled.ul`
     cursor: pointer;
     font-weight: 600;
     letter-spacing: -1.2px;
-    font-size: 1.6rem;
     &:hover {
       background: ${styles.colors.yellow};
       color: ${styles.colors.mainLight};
@@ -47,6 +46,7 @@ const LinksWrapper = styled.ul`
     .nav-link {
       padding: 0.4rem 2rem;
       &:hover {
+        transition: all 0.2s ease-in;
         padding: 0.4rem 2rem;
         background: none;
         color: ${styles.colors.yellow};
