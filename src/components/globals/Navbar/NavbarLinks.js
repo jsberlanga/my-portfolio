@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { styles } from "../../../utils"
 
 const defaultLinks = [
@@ -21,8 +21,24 @@ const defaultLinks = [
   },
 ]
 
+const bounce = keyframes`
+  0% {
+    transform: translateY(0px)
+  }
+
+  50% {
+    transform: translateY(-10px)
+  }
+
+  100% {
+
+    transform: translateY(0px)
+  }
+`
+
 const LinksWrapper = styled.ul`
   .nav-link {
+    /* animation: ${bounce} 1s; */
     display: flex;
     text-transform: capitalize;
     text-decoration: none;
@@ -61,6 +77,7 @@ class NavbarLinks extends React.Component {
   state = {
     links: defaultLinks,
   }
+
   render() {
     return (
       <LinksWrapper open={this.props.navbarOpen}>

@@ -6,12 +6,12 @@ import Header from "./Header"
 import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
-@import url("https://use.typekit.net/mhc1esb.css");
+/* @import url("https://use.typekit.net/mhc1esb.css"); */
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
+  }
 
   body {
     font-family: adobe-garamond-pro, serif;

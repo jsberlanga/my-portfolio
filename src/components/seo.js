@@ -77,7 +77,9 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link rel="stylesheet" href="https://use.typekit.net/mhc1esb.css" />
+    </Helmet>
   )
 }
 
