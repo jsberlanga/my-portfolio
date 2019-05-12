@@ -25,6 +25,15 @@ const GET_IMAGES = graphql`
         }
       }
     }
+    skinnyalfredoImage: file(
+      relativePath: { eq: "portfolio/skinnyalfredo/imageOne.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `
 const imageStyles = {
@@ -112,6 +121,10 @@ const Portfolio = () => (
             </div>
           </div>
           <div className="card">
+            <Img
+              style={imageStyles}
+              fluid={data.skinnyalfredoImage.childImageSharp.fluid}
+            />
             <div className="text-more">
               <h2>Coming soon - Skinny Alfredo</h2>
               <div>

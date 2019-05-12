@@ -33,6 +33,7 @@ module.exports = {
       options: {
         typekit: {
           id: "mhc1esb",
+          api: "//use.typekit.net",
         },
       },
     },
