@@ -17,6 +17,11 @@ const ProjectWrapper = styled.div`
   }
   .icons {
     text-align: center;
+    background: ${colors.mainDark};
+    color: ${colors.mainLight};
+    padding: 2rem 0 0rem;
+    max-width: 44rem;
+    margin: 0 auto;
     a {
       font-size: 4rem;
       cursor: pointer;

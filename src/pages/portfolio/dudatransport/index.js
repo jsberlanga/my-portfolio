@@ -5,7 +5,7 @@ import SEO from "../../../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { FaGithub, FaRegWindowRestore } from "react-icons/fa"
+import { IoLogoGithub, IoIosGlobe } from "react-icons/io"
 
 import { HeaderSection, ProjectWrapper } from "../../../utils"
 import { imageStyles } from "../../../components/Portfolio"
@@ -60,20 +60,21 @@ export default () => (
 
     <ProjectWrapper>
       <div className="icons">
-        <h5>Go ahead and check the code & the website</h5>
+        <h5>Go ahead and check the code & the website:</h5>
+
         <a
           href="https://github.com/jsberlanga/gatsby-dudatransport"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <FaGithub />
+          <IoLogoGithub />
         </a>
         <a
           href="http://www.dudatransport.com/"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <FaRegWindowRestore />
+          <IoIosGlobe />
         </a>
       </div>
       <div className="text">
