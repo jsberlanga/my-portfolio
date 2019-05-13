@@ -88,7 +88,7 @@ export default () => (
           <b> Adobe Illustrator</b> for the design of the logo and the icons.
         </p>
         <p>
-          And, for deploying this website I got the use of <b>Netlify</b>.
+          For deploying this website I got the use of <b>Netlify</b>.
         </p>
       </div>
       <StaticQuery

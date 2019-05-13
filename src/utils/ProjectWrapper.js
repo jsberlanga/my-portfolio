@@ -8,7 +8,7 @@ const ProjectWrapper = styled.div`
   .text {
     h5 {
       font-style: italic;
-      margin-top: 2rem;
+      margin: 2rem 0 1rem;
     }
   }
   .images {

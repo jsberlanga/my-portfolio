@@ -83,7 +83,7 @@ const Portfolio = () => (
               <div>
                 <h4>The tech behind:</h4>
                 <p>
-                  Reactjs, Gatsby, Styled Components, Netlify, among others...
+                  Reactjs, Gatsbyjs, Styled Components, Netlify, among others...
                 </p>
               </div>
               <div>
@@ -126,10 +126,10 @@ const Portfolio = () => (
               fluid={data.skinnyalfredoImage.childImageSharp.fluid}
             />
             <div className="text-more">
-              <h2>Coming soon - Skinny Alfredo</h2>
+              <h2>Project Site - Skinny Alfredo</h2>
               <div>
                 <h4>The tech behind:</h4>
-                <p>Pure and simple ES6 Javascript</p>
+                <p>Webpack app with ES6 Javascript</p>
               </div>
               <Link to="/portfolio/skinnyalfredo">
                 <Button
