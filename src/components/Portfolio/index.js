@@ -34,6 +34,15 @@ const GET_IMAGES = graphql`
         }
       }
     }
+    coffeeglotImage: file(
+      relativePath: { eq: "portfolio/coffeeglot/imageOne.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `
 const imageStyles = {
@@ -132,6 +141,29 @@ const Portfolio = () => (
                 <p>Webpack app with ES6 Javascript</p>
               </div>
               <Link to="/portfolio/skinnyalfredo">
+                <Button
+                  width="20rem"
+                  buttonTitle="know more"
+                  className="fromLeft"
+                />
+              </Link>
+            </div>
+          </div>
+          <div className="card">
+            <Img
+              style={imageStyles}
+              fluid={data.coffeeglotImage.childImageSharp.fluid}
+            />
+            <div className="text-more">
+              <h2>In development - Coffeglot</h2>
+              <div>
+                <h4>The tech behind:</h4>
+                <p>
+                  Reactjs, Nextjs, Apollo Client, Yoga Server, Prisma, among
+                  others...
+                </p>
+              </div>
+              <Link to="/portfolio/coffeeglot">
                 <Button
                   width="20rem"
                   buttonTitle="know more"
