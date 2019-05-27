@@ -35,7 +35,7 @@ const GET_IMAGES = graphql`
       }
     }
     coffeeglotImage: file(
-      relativePath: { eq: "portfolio/coffeeglot/imageOne.png" }
+      relativePath: { eq: "portfolio/coffeeglot/imageOne.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -155,7 +155,7 @@ const Portfolio = () => (
               fluid={data.coffeeglotImage.childImageSharp.fluid}
             />
             <div className="text-more">
-              <h2>In development - Coffeglot</h2>
+              <h2>Coffeglot Project</h2>
               <div>
                 <h4>The tech behind:</h4>
                 <p>
