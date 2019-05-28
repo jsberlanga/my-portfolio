@@ -4,36 +4,45 @@ import { withPrefix, Link } from "gatsby"
 
 import { styles, StyledButton, HeaderSection } from "../../utils"
 
-import { apollo_icon, graphql_icon, prisma_icon } from "../../images/icons"
+import {
+  js_icon,
+  html5_icon,
+  sass_icon,
+  reactjs_icon,
+  apollo_icon,
+  graphql_icon,
+  prisma_icon,
+  nodejs_icon,
+  github_icon,
+  firebase_icon,
+  illustrator_icon,
+  photoshop_icon,
+} from "../../images/icons"
 
 import { FiDownload } from "react-icons/fi"
-import { FaVuejs, FaRegFilePdf } from "react-icons/fa"
-import {
-  DiCss3,
-  DiFirebase,
-  DiGithubBadge,
-  DiIllustrator,
-  DiJsBadge,
-  DiNodejsSmall,
-  DiPhotoshop,
-  DiReact,
-  DiResponsive,
-  DiSass,
-  DiMongodb,
-} from "react-icons/di"
+import { FaRegFilePdf } from "react-icons/fa"
+import { DiResponsive, DiMongodb } from "react-icons/di"
 
 const MainSection = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
   max-width: 80rem;
-  /* background: rgba(54, 79, 107, 0.1); */
   h2,
   h3 {
     font-style: italic;
     margin-bottom: 1rem;
+    transform: skew(15deg);
+    letter-spacing: -2px;
+  }
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
   }
 `
 
 const AboutMeSection = styled.section`
-  text-align: center;
   padding: 2rem 3em;
   background: #eeeeee;
   a {
@@ -44,25 +53,28 @@ const AboutMeSection = styled.section`
 `
 
 const TechnologiesSection = styled.section`
+  filter: grayscale(20%);
   padding: 2rem 3rem;
-  margin: 2rem 0;
-  /* background: #eeeeee; */
   display: grid;
-  grid-template-columns: 30% 35% 35%;
+  h3 {
+    margin-left: 1rem;
+  }
   li {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    height: 3rem;
+    height: 2.4rem;
+    margin-left: 1.5rem;
     span {
-      font-size: 2rem;
+      font-size: 1.7rem;
       margin: 0 1rem 0 0;
     }
     p {
+      font-size: 1.3rem;
       margin-bottom: 0;
     }
     img {
-      width: 2rem;
+      width: 1.7rem;
       margin: 0 1rem 0 0;
     }
   }
@@ -82,6 +94,21 @@ const MoreAboutMeSection = styled.section`
   padding: 2rem 3rem;
   margin: 2rem 0;
   background: #eeeeee;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  h5 {
+    margin-top: 2rem;
+    font-style: italic;
+  }
+  p {
+    margin-left: 1rem;
+  }
+  .date {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-left: 0;
+  }
 `
 
 const About = () => (
@@ -171,57 +198,29 @@ const About = () => (
         </div>
       </AboutMeSection>
       <TechnologiesSection>
-        <h2>technologies</h2>
+        <h2>technologies I've got experience with:</h2>
         <div>
-          <h2>experience with</h2>
+          <h3>on the front-end</h3>
           <ul>
             <li>
-              <span>
-                <DiJsBadge />
-              </span>
+              <img src={js_icon} alt="js" />
               <p>ES6 Javascript</p>
             </li>
             <li>
-              <span>
-                <DiCss3 />
-              </span>
+              <img src={html5_icon} alt="html5" />
               <p>HTML5 / CSS3</p>
             </li>
             <li>
-              <span>
-                <DiSass />
-              </span>
+              <img src={sass_icon} alt="sass" />
               <p>SASS</p>
             </li>
             <li>
-              <span>
-                <DiReact />
-              </span>
-              <p>React / Redux</p>
-            </li>
-            <li>
-              <img src={graphql_icon} alt="graphql" />
-              <p>GraphQL</p>
+              <img src={reactjs_icon} alt="react" />
+              <p>React / Redux / Gatsby / Nextjs</p>
             </li>
             <li>
               <img src={apollo_icon} alt="apollo" />
               <p>Apollo</p>
-            </li>
-            <li>
-              <img src={prisma_icon} alt="prisma" />
-              <p>Prisma</p>
-            </li>
-            <li>
-              <span>
-                <DiNodejsSmall />
-              </span>
-              <p>Node.js / Express</p>
-            </li>
-            <li>
-              <span>
-                <DiGithubBadge />
-              </span>
-              <p>Version Control (GIT) / GitHub</p>
             </li>
             <li>
               <span>
@@ -230,12 +229,31 @@ const About = () => (
               <p>Responsive Layout and Design</p>
             </li>
             <li>
-              <span>
-                <FaVuejs />
-              </span>
-              <p>Vue.js / Vuex</p>
+              <img src={illustrator_icon} alt="illustrator" />
+              <img src={photoshop_icon} alt="photoshop" />
+              <p>Adobe Illustrator / Photoshop</p>
             </li>
-
+            <li>
+              <img src={github_icon} alt="github" />
+              <p>Version Control (GIT) / GitHub</p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>on the back-end</h3>
+          <ul>
+            <li>
+              <img src={graphql_icon} alt="graphql" />
+              <p>GraphQL</p>
+            </li>
+            <li>
+              <img src={prisma_icon} alt="prisma" />
+              <p>Prisma</p>
+            </li>
+            <li>
+              <img src={nodejs_icon} alt="nodejs" />
+              <p>Node.js / Express</p>
+            </li>
             <li>
               <span>
                 <DiMongodb />
@@ -243,37 +261,57 @@ const About = () => (
               <p>MongoDB</p>
             </li>
             <li>
-              <span>
-                <DiFirebase />
-              </span>
+              <img src={firebase_icon} alt="firebase" />
               <p>Firebase</p>
             </li>
-            <li>
-              <span>
-                <DiIllustrator />
-              </span>
-              <p>Adobe Illustrator</p>
-            </li>
-            <li>
-              <span>
-                <DiPhotoshop />
-              </span>
-              <p>Adobe Photoshop</p>
-            </li>
+            <div className="border" />
           </ul>
         </div>
       </TechnologiesSection>
-      <MoreAboutMeSection>
-        <h2>some more about me</h2>
-        <div>
-          <p>
-            Even though lately I haven't done a lot more other than programming,
-            in my spare time, there are other things I treasure too. I am an
-            avid reader. Some of my favorite works are:
-          </p>
-        </div>
-      </MoreAboutMeSection>
     </MainSection>
+    <MoreAboutMeSection>
+      <h2>work experience</h2>
+      <h5>Cloud Engineer / Capgemini Polska</h5>
+      <p className="date">Kraków Nov 2018 - Present</p>
+      <p>
+        As part of the Office 365 FastTrack Team I am responsible for the
+        preparation and migration of clients’ data to the Microsoft cloud. From
+        the onboarding process to the actual data migration and postmigration
+        reporting.{" "}
+      </p>
+      <h5>IT Operations Analyst (2nd level) / Stanley Black & Decker</h5>
+      <p className="date">Warsaw Jun 2017 – Oct 2017</p>
+      <p>
+        Part of the ITSM Change Management team and responsible for the later
+        deployment and implementation of the technologies VMWARE AirWatch
+        support for Android and Apple devices, Avecto Access Management and
+        Zscaler Cloud Security. Responsible for administering PowerShell
+        scripting for AD User Management and Exchange Online.
+      </p>
+      <h5>IT Operations Analyst / Stanley Black & Decker</h5>
+      <p className="date">Warsaw Nov 2016 – Jun 2017</p>
+      <p>
+        Responsible for providing remote and onsite IT support for our internal
+        employees. Managing over 40.000 Network and Non-Standard Accounts in
+        Active Directory, SAP and over 100 different applications.{" "}
+      </p>
+      <h5>IT Specialist / HCL Poland</h5>
+      <p className="date">Kraków Oct 2013 – Oct 2016</p>
+      <p>
+        Responsible for diagnosing and resolving end-user network, hardware and
+        software problems, MS Office, Internet, dial-in, TCP/IP and local-area
+        network access problems via telephone / email including remote access. 
+        Software deployment. Installing applications and drivers, coordinating
+        all hardware and software upgrades and performing backups.
+      </p>
+      <h5>Finance and Accounting Process Analyst / Capgemini Polska</h5>
+      <p className="date">Kraków Jul 2012 – Sep 2013</p>
+      <p>
+        Operating SAP I was responsible for performing the day to day processing
+        of financial transactions to ensure the correct and timely processing of
+        data.
+      </p>
+    </MoreAboutMeSection>
   </>
 )
 

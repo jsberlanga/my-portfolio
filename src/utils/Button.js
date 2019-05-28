@@ -16,6 +16,10 @@ const StyledButton = styled.div`
   position: relative;
   font-style: italic;
   color: ${props => props.color === "light" && `${styles.colors.mainLight}`};
+  transition: all 0.4s;
+  :hover {
+    background: ${styles.colors.yellow2};
+  }
   :before {
     content: "";
     border-top: ${props =>

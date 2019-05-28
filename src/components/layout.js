@@ -30,18 +30,24 @@ h1, h2, h3, h4, h5 {
   line-height: 1.15;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 2.488em;
+h1, h2, h3{
+  font-style: italic;
+  transform: skew(15deg);
+  letter-spacing: -2px;
 }
 
-h2 {font-size: 2.074em;}
+h1 {
+  margin-top: 0;
+  font-size: 2.5em;
+}
 
-h3 {font-size: 1.728em;}
+h2 {font-size: 2.1em;}
 
-h4 {font-size: 1.44em;}
+h3 {font-size: 1.75em;}
 
-h5 {font-size: 1.2em;}
+h4 {font-size: 1.45em;}
+
+h5 {font-size: 1.25em;}
 
 a {
   all: unset;
