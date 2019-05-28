@@ -13,7 +13,33 @@ const StyledButton = styled.div`
   padding: 0.4rem 0.8rem;
   background: ${styles.colors.yellow};
   cursor: pointer;
-
+  position: relative;
+  font-style: italic;
+  color: ${props => props.color === "light" && `${styles.colors.mainLight}`};
+  :before {
+    content: "";
+    border-top: ${props =>
+      props.border ? `3px solid ${styles.colors.yellow}` : ""};
+    border-left: ${props =>
+      props.border ? `3px solid ${styles.colors.yellow}` : ""};
+    width: 5%;
+    height: 30%;
+    position: absolute;
+    bottom: 76%;
+    right: 95.75%;
+  }
+  :after {
+    content: "";
+    border-bottom: ${props =>
+      props.border ? `3px solid ${styles.colors.yellow}` : ""};
+    border-right: ${props =>
+      props.border ? `3px solid ${styles.colors.yellow}` : ""};
+    width: 5%;
+    height: 30%;
+    position: absolute;
+    top: 76%;
+    left: 95.9%;
+  }
   .fromLeft {
     transition: all 0.5s ease-in-out;
     position: absolute;
@@ -54,9 +80,9 @@ const StyledButton = styled.div`
   }
 `
 
-const Button = ({ buttonTitle, width, className }) => {
+const Button = ({ buttonTitle, width, className, border, color }) => {
   return (
-    <StyledButton width={width}>
+    <StyledButton width={width} border color={color}>
       <FiArrowRightCircle className={className} />
       <h5>{buttonTitle}</h5>
     </StyledButton>

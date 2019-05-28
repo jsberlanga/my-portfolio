@@ -6,10 +6,29 @@ const ProjectWrapper = styled.div`
   margin: 0 auto;
   text-align: center;
   .text {
+    text-align: left;
     h5 {
       font-style: italic;
-      margin: 2rem 0 1rem;
+      margin: 1rem 0 1rem;
     }
+    display: grid;
+    grid-template-columns: 3.3fr 1fr;
+    grid-gap: 2rem;
+    margin: 2rem 0;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .text__functionality {
+    padding: 1rem;
+    p {
+      font-style: italic;
+    }
+  }
+  .text__technology {
+    background: #eeeeee;
+    padding: 1rem;
   }
   .images {
     display: grid;
@@ -27,8 +46,8 @@ const ProjectWrapper = styled.div`
       cursor: pointer;
       margin: 0 1rem;
       :hover {
-        color: ${colors.yellow};
-        transition: all 0.3s;
+        transition: all 0.4s;
+        color: #e4508f;
       }
     }
   }

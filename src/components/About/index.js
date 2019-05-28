@@ -4,12 +4,10 @@ import { withPrefix, Link } from "gatsby"
 
 import { styles, StyledButton, HeaderSection } from "../../utils"
 
-import apollo from "../../images/icons/apollo.svg"
-import graphql from "../../images/icons/graphql.svg"
-import prisma from "../../images/icons/prisma.svg"
+import { apollo_icon, graphql_icon, prisma_icon } from "../../images/icons"
 
 import { FiDownload } from "react-icons/fi"
-import { FaVuejs, FaRegLaughBeam, FaRegFilePdf } from "react-icons/fa"
+import { FaVuejs, FaRegFilePdf } from "react-icons/fa"
 import {
   DiCss3,
   DiFirebase,
@@ -23,8 +21,6 @@ import {
   DiSass,
   DiMongodb,
 } from "react-icons/di"
-
-import image from "../../images/about/1.jpg"
 
 const MainSection = styled.section`
   max-width: 80rem;
@@ -125,15 +121,12 @@ const About = () => (
       <AboutMeSection>
         <h2>a little about me</h2>
         <div>
-          <img src={image} width="300" alt="me-and-wilson" />
           <p>
-            Hi, my name is Julio. I am a Spaniard from Granada but I've lived in
-            Krakow for the past years. I love living here.
+            Hi, my name is Julio. First of all, thank you for being here! I am a
+            Spaniard from Granada but I've lived in Krakow for the past years. I
+            love living here.
           </p>
-          <p>
-            First of all, thank you for being here! Just to make sure: I am the
-            one on the back of the picture. <FaRegLaughBeam />
-          </p>
+
           <p>
             A couple of words about my professional life: I started my way into
             IT, some years ago when I got hired by{" "}
@@ -180,7 +173,7 @@ const About = () => (
       <TechnologiesSection>
         <h2>technologies</h2>
         <div>
-          <h2>day-to-day comfort</h2>
+          <h2>experience with</h2>
           <ul>
             <li>
               <span>
@@ -207,15 +200,15 @@ const About = () => (
               <p>React / Redux</p>
             </li>
             <li>
-              <img src={graphql} alt="graphql" />
+              <img src={graphql_icon} alt="graphql" />
               <p>GraphQL</p>
             </li>
             <li>
-              <img src={apollo} alt="apollo" />
+              <img src={apollo_icon} alt="apollo" />
               <p>Apollo</p>
             </li>
             <li>
-              <img src={prisma} alt="prisma" />
+              <img src={prisma_icon} alt="prisma" />
               <p>Prisma</p>
             </li>
             <li>
@@ -236,12 +229,6 @@ const About = () => (
               </span>
               <p>Responsive Layout and Design</p>
             </li>
-            <li />
-          </ul>
-        </div>
-        <div>
-          <h2>experience with</h2>
-          <ul>
             <li>
               <span>
                 <FaVuejs />
