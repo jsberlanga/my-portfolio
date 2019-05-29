@@ -99,9 +99,8 @@ const GalleryContainer = styled.div`
     font-style: italic;
     font-size: 1.1rem;
   }
-
   .text-more {
-    margin: 2rem;
+    margin: 2rem 0;
   }
   @media (min-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);

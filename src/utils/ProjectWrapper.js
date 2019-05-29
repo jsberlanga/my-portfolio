@@ -51,5 +51,8 @@ const ProjectWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 420px) {
+    max-width: 95vw;
+  }
 `
 export { ProjectWrapper }

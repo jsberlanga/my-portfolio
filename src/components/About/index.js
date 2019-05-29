@@ -50,6 +50,9 @@ const AboutMeSection = styled.section`
     color: ${styles.colors.yellow};
     cursor: pointer;
   }
+  @media (max-width: 420px) {
+    padding: 1rem 1.5rem;
+  }
 `
 
 const TechnologiesSection = styled.section`
@@ -80,12 +83,19 @@ const TechnologiesSection = styled.section`
   }
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    text-align: center;
+    /* text-align: center; */
     li {
-      justify-content: center;
+      /* justify-content: center; */
     }
     * {
       margin-top: 0.4rem;
+    }
+  }
+  @media (max-width: 420px) {
+    padding: 1rem 1.5rem;
+
+    li {
+      height: auto;
     }
   }
 `
@@ -108,6 +118,9 @@ const MoreAboutMeSection = styled.section`
     font-style: italic;
     font-size: 1.1rem;
     margin-left: 0;
+  }
+  @media (max-width: 420px) {
+    padding: 1rem 1.5rem;
   }
 `
 
