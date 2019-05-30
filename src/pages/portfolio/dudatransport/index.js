@@ -12,28 +12,36 @@ import { imageStyles } from "../../../components/Portfolio"
 
 const GET_IMAGES = graphql`
   {
-    main: file(relativePath: { eq: "portfolio/dudatransport/main.png" }) {
+    imageOne: file(
+      relativePath: { eq: "portfolio/dudatransport/imageOne.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    landing: file(relativePath: { eq: "portfolio/dudatransport/landing.png" }) {
+    imageTwo: file(
+      relativePath: { eq: "portfolio/dudatransport/imageTwo.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    contact: file(relativePath: { eq: "portfolio/dudatransport/contact.png" }) {
+    imageThree: file(
+      relativePath: { eq: "portfolio/dudatransport/imageThree.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    thanks: file(relativePath: { eq: "portfolio/dudatransport/thanks.png" }) {
+    imageFour: file(
+      relativePath: { eq: "portfolio/dudatransport/imageFour.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -107,15 +115,19 @@ export default () => (
             <div className="images">
               <Img
                 style={imageStyles}
-                fluid={data.landing.childImageSharp.fluid}
+                fluid={data.imageOne.childImageSharp.fluid}
               />
               <Img
                 style={imageStyles}
-                fluid={data.contact.childImageSharp.fluid}
+                fluid={data.imageTwo.childImageSharp.fluid}
               />
               <Img
                 style={imageStyles}
-                fluid={data.thanks.childImageSharp.fluid}
+                fluid={data.imageThree.childImageSharp.fluid}
+              />
+              <Img
+                style={imageStyles}
+                fluid={data.imageFour.childImageSharp.fluid}
               />
               <p>
                 <Link to="/portfolio">
