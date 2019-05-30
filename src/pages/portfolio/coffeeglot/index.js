@@ -153,6 +153,10 @@ export default () => (
                 style={imageStyles}
                 fluid={data.imageFive.childImageSharp.fluid}
               />
+              <Img
+                style={imageStyles}
+                fluid={data.imageSix.childImageSharp.fluid}
+              />
               <p>
                 <Link to="/portfolio">
                   Go back to my{" "}
