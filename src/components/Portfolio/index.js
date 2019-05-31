@@ -122,7 +122,7 @@ const Portfolio = () => (
               style={imageStyles}
               fluid={data.coffeeglotImage.childImageSharp.fluid}
             />
-            <h2>Coffeglot Project</h2>
+            <h2>Coffeeglot Project</h2>
             <div className="text-more">
               <div>
                 <h4>The technology behind this website:</h4>
