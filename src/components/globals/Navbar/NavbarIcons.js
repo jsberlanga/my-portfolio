@@ -18,7 +18,7 @@ const defaultIcons = [
   {
     id: 2,
     icon: <FaEnvelope className="icon envelope-icon" />,
-    path: "mailto:jsberlanga@gmail.com",
+    path: "mailto:hi@juliosoto.dev",
   },
 ]
 

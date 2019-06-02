@@ -38,16 +38,22 @@ const ProjectWrapper = styled.div`
     text-align: center;
     background: ${colors.mainDark};
     color: ${colors.mainLight};
-    padding: 2rem 0 0rem;
+    padding: 2rem 0 1rem;
     max-width: 44rem;
     margin: 0 auto;
+    transition: all 0.4s;
+
+    h5 {
+      margin-bottom: 1rem;
+    }
     a {
-      font-size: 4rem;
+      font-size: 5rem;
       cursor: pointer;
-      margin: 0 1rem;
+      margin: 1.4rem;
+      line-height: 1;
       :hover {
         transition: all 0.4s;
-        color: #e4508f;
+        color: ${colors.yellow};
       }
     }
   }

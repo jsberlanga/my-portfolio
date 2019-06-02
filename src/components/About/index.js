@@ -162,9 +162,9 @@ const About = () => (
         <h2>a little about me</h2>
         <div>
           <p>
-            Hi, my name is Julio. First of all, thank you for being here! I am a
-            Spaniard from Granada but I've lived in Krakow for the past years. I
-            love living here.
+            Hi! First of all, thank you for being here! My name is Julio and
+            originally I am from Granada, Spain. I came to Kraków some years
+            ago, where I have lived and worked happily since.
           </p>
 
           <p>
@@ -203,10 +203,11 @@ const About = () => (
             from here. I feel addicted to coding. I love it, every part of it,
             because it's challenging and fun and sometimes I get mad at it but I
             always find my way back to it, because I cannot stop thinking about
-            it, day or night. Definitely, I want it to be a full-time job. I am
-            open for any opportunities in this field, particularly as a
-            Front-End or Full Stack Developer, so feel free to{" "}
-            <Link to="/contact">say hi</Link> and find out how to work with me.
+            it. Definitely, I want it to be a full-time job. I am open for any
+            opportunities in this field, particularly as a Front-End or Full
+            Stack Developer, so feel free to{" "}
+            <Link to="/contact">contact me</Link> and let's find out how to work
+            together.
           </p>
         </div>
       </AboutMeSection>

@@ -61,7 +61,7 @@ const StyledForm = styled.form`
   button {
     background: ${styles.colors.yellow};
     color: ${styles.colors.mainLight};
-    padding: 1.7rem;
+    padding: 1.4rem;
     width: 7rem;
     margin: 1.2rem auto;
     cursor: pointer;
@@ -70,13 +70,13 @@ const StyledForm = styled.form`
     transition: all 0.2s;
     box-shadow: 1px 1px 6px -2px gray;
     &:hover {
-      background-color: #e4508f;
+      background-color: ${styles.colors.mainDark};
     }
     &:before {
       transition: all 0.5s;
       content: "Send";
       position: absolute;
-      top: 17%;
+      top: 15%;
       left: 35%;
     }
     &:hover:before {
@@ -87,7 +87,7 @@ const StyledForm = styled.form`
     &:after {
       content: "⇨";
       position: absolute;
-      top: -5%;
+      top: -15%;
       left: -25%;
       transition: all 0.5s;
       opacity: 0;

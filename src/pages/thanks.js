@@ -11,7 +11,16 @@ export default () => (
       <SEO title="Thank You" keywords={[`gatsby`, `application`, `react`]} />
       <h1>Thanks!</h1>
       <p>I'll get back to you as soon as possible!</p>
-      <Link to="/">Go back to my page</Link>
+      <Link
+        to="/portfolio"
+        style={{
+          cursor: "pointer",
+          color: "#eac100",
+          borderBottom: "2px solid #eac100",
+        }}
+      >
+        Go back to my page
+      </Link>
     </HeaderSection>
   </Layout>
 )

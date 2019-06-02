@@ -20,6 +20,22 @@ const HeaderWrapper = styled.div`
       display: none;
     }
   }
+
+  /* animation: rotate 55s linear infinite;
+  @keyframes rotate {
+    0% {
+      opacity: 0.5;
+      transform: rotate(0) scaleX(0.9) scaleY(0.9);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(180deg) scaleX(1) scaleY(1);
+    }
+    100% {
+      opacity: 0.5z;
+      transform: rotate(360deg) scaleX(0.9) scaleY(0.9);
+    }
+  } */
 `
 
 const NavbarLogo = ({ handleNavbar }) => (
