@@ -286,7 +286,7 @@ const About = () => (
     <MoreAboutMeSection>
       <h2>work experience</h2>
       <h5>Cloud Engineer / Capgemini Polska</h5>
-      <p className="date">Kraków Nov 2018 - Present</p>
+      <p className="date">Kraków Nov 2017 - Present</p>
       <p>
         As part of the Office 365 FastTrack Team I am responsible for the
         preparation and migration of clients’ data to the Microsoft cloud. From
