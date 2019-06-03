@@ -51,9 +51,20 @@ const ProjectWrapper = styled.div`
       cursor: pointer;
       margin: 1.4rem;
       line-height: 1;
+      /* :hover { */
+        /* transition: all 0.2s; */
+        /* color: ${colors.gray}; */
+        /* filter: drop-shadow(25px 2px 0px ${colors.yellow}); */
+      /* } */
+    }
+
+    svg {
       :hover {
-        transition: all 0.4s;
-        color: ${colors.yellow};
+        transition: all 0.2s ease;
+        /* filter: invert(0.5) sepia(1) hue-rotate(366deg) saturate(4)
+          brightness(1); */
+        transform: scale(1.05);
+        color: ${colors.gray};
       }
     }
   }

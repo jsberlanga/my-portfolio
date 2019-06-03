@@ -11,7 +11,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
   }
+
 
   body {
     font-family: adobe-garamond-pro, serif;
@@ -21,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.2rem;
     color: ${styles.colors.mainDark};
     background: ${styles.colors.mainLight};
+
   }
 
 p {margin-bottom: 0.85em;}
@@ -55,6 +58,19 @@ a {
 li {
   list-style: none;
   font-size: 1.6rem;
+}
+
+p,h1,h2,h3,h4,h5,span,b {
+::selection {
+    background: #f3c1c6;
+  }
+}
+
+button, a, li, img {
+  ::selection {
+    background: #f3c1c6;
+    color: ${styles.colors.gray};
+  }
 }
 `
 
