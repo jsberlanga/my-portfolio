@@ -78,7 +78,7 @@ export default () => (
           <IoLogoGithub />
         </a>
         <a
-          href="http://www.dudatransport.com/"
+          href="https://www.dudatransport.com/"
           rel="noopener noreferrer"
           target="_blank"
         >
