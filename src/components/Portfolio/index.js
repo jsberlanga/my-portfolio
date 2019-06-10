@@ -60,7 +60,7 @@ const GET_IMAGES = graphql`
 const imageStyles = {
   boxShadow: "1px 1px 10px -5px lightgrey",
   marginBottom: "2rem",
-  filter: " grayscale(30%)",
+  filter: " grayscale(20%) blur(0.2px)",
 }
 
 const GalleryContainer = styled.div`
@@ -78,22 +78,24 @@ const GalleryContainer = styled.div`
     margin: 0.4rem;
     width: 3rem;
     height: 3rem;
-    filter: grayscale(20%);
+    filter: grayscale(30%);
   }
   li {
     margin-left: 1rem;
   }
   h2 {
-    font-size: 3.2rem;
+    font-size: 2.9rem;
     letter-spacing: -2px;
     transform: skew(15deg);
     font-style: italic;
-    margin-top: -1rem;
+    margin: -1.4rem auto 2rem;
+    text-decoration: underline;
   }
   h4 {
     font-style: italic;
     margin: 0.4rem 0;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
+    font-weight: 400;
   }
   p {
     font-style: italic;
@@ -118,121 +120,129 @@ const Portfolio = () => (
       return (
         <GalleryContainer>
           <div className="card">
-            <Img
-              style={imageStyles}
-              fluid={data.coffeeglotImage.childImageSharp.fluid}
-            />
-            <h2>Coffeeglot Project</h2>
-            <div className="text-more">
-              <div>
-                <h4>The technology behind this website:</h4>
-                <img className="tech-icon" src={reactjs_icon} alt="react" />
-                <img className="tech-icon" src={nextjs_icon} alt="nextjs" />
-                <img className="tech-icon" src={apollo_icon} alt="apollo" />
-                <img className="tech-icon" src={graphql_icon} alt="graphql" />
-                <img className="tech-icon" src={prisma_icon} alt="prisma" />
-                <img className="tech-icon" src={heroku_icon} alt="heroku" />
-                <p>
-                  Reactjs, Nextjs, Apollo Client, GraphQL, Prisma, among
-                  others...
-                </p>
+            <Link to="/portfolio/coffeeglot">
+              <Img
+                style={imageStyles}
+                fluid={data.coffeeglotImage.childImageSharp.fluid}
+              />
+              <h2>Coffeeglot</h2>
+              <div className="text-more">
+                <div>
+                  <h4>The technology behind this website:</h4>
+                  <img className="tech-icon" src={reactjs_icon} alt="react" />
+                  <img className="tech-icon" src={nextjs_icon} alt="nextjs" />
+                  <img className="tech-icon" src={apollo_icon} alt="apollo" />
+                  <img className="tech-icon" src={graphql_icon} alt="graphql" />
+                  <img className="tech-icon" src={prisma_icon} alt="prisma" />
+                  <img className="tech-icon" src={heroku_icon} alt="heroku" />
+                  <p>
+                    Reactjs, Nextjs, Apollo Client, GraphQL, Prisma, among
+                    others...
+                  </p>
+                </div>
+                <div>
+                  <Link to="/portfolio/coffeeglot">
+                    <Button
+                      width="20rem"
+                      buttonTitle="know more"
+                      className="fromLeft"
+                      color="light"
+                    />
+                  </Link>
+                </div>
               </div>
-              <div>
-                <Link to="/portfolio/coffeeglot">
-                  <Button
-                    width="20rem"
-                    buttonTitle="know more"
-                    className="fromLeft"
-                    color="light"
-                  />
-                </Link>
-              </div>
-            </div>
+            </Link>
           </div>
           <div className="card">
-            <Img
-              style={imageStyles}
-              fluid={data.skinnyalfredoImage.childImageSharp.fluid}
-            />
-            <h2>Skinny Alfredo Project</h2>
-            <div className="text-more">
-              <div>
-                <h4>The technology behind this website:</h4>
-                <img className="tech-icon" src={js_icon} alt="js" />
-                <img className="tech-icon" src={netlify_icon} alt="netlify" />
+            <Link to="/portfolio/skinnyalfredo">
+              <Img
+                style={imageStyles}
+                fluid={data.skinnyalfredoImage.childImageSharp.fluid}
+              />
+              <h2>Skinny Alfredo</h2>
+              <div className="text-more">
+                <div>
+                  <h4>The technology behind this website:</h4>
+                  <img className="tech-icon" src={js_icon} alt="js" />
+                  <img className="tech-icon" src={netlify_icon} alt="netlify" />
 
-                <p>Webpack app with ES6 Javascript</p>
+                  <p>Webpack app with ES6 Javascript</p>
+                </div>
+                <div>
+                  <Link to="/portfolio/skinnyalfredo">
+                    <Button
+                      border
+                      width="20rem"
+                      buttonTitle="know more"
+                      className="fromLeft"
+                      color="light"
+                    />
+                  </Link>
+                </div>
               </div>
-              <div>
-                <Link to="/portfolio/skinnyalfredo">
-                  <Button
-                    border
-                    width="20rem"
-                    buttonTitle="know more"
-                    className="fromLeft"
-                    color="light"
-                  />
-                </Link>
-              </div>
-            </div>
+            </Link>
           </div>
           <div className="card">
-            <Img
-              style={imageStyles}
-              fluid={data.sourdoughbakersImage.childImageSharp.fluid}
-            />
-            <h2>Sourdough Bakers Project</h2>
-            <div className="text-more">
-              <div>
-                <h4>The technology behind this website:</h4>
-                <img className="tech-icon" src={reactjs_icon} alt="react" />
-                <img className="tech-icon" src={nextjs_icon} alt="nextjs" />
-                <img className="tech-icon" src={apollo_icon} alt="apollo" />
-                <img className="tech-icon" src={graphql_icon} alt="graphql" />
-                <img className="tech-icon" src={prisma_icon} alt="prisma" />
-                <img className="tech-icon" src={heroku_icon} alt="heroku" />
-                <p>
-                  Reactjs, Nextjs, Apollo Client, GraphQL, Prisma, among
-                  others...
-                </p>
+            <Link to="/portfolio/sourdoughbakers">
+              <Img
+                style={imageStyles}
+                fluid={data.sourdoughbakersImage.childImageSharp.fluid}
+              />
+              <h2>Sourdough Bakers</h2>
+              <div className="text-more">
+                <div>
+                  <h4>The technology behind this website:</h4>
+                  <img className="tech-icon" src={reactjs_icon} alt="react" />
+                  <img className="tech-icon" src={nextjs_icon} alt="nextjs" />
+                  <img className="tech-icon" src={apollo_icon} alt="apollo" />
+                  <img className="tech-icon" src={graphql_icon} alt="graphql" />
+                  <img className="tech-icon" src={prisma_icon} alt="prisma" />
+                  <img className="tech-icon" src={heroku_icon} alt="heroku" />
+                  <p>
+                    Reactjs, Nextjs, Apollo Client, GraphQL, Prisma, among
+                    others...
+                  </p>
+                </div>
+                <div>
+                  <Link to="/portfolio/sourdoughbakers">
+                    <Button
+                      width="20rem"
+                      buttonTitle="know more"
+                      className="fromLeft"
+                      color="light"
+                    />
+                  </Link>
+                </div>
               </div>
-              <div>
-                <Link to="/portfolio/sourdoughbakers">
-                  <Button
-                    width="20rem"
-                    buttonTitle="know more"
-                    className="fromLeft"
-                    color="light"
-                  />
-                </Link>
-              </div>
-            </div>
+            </Link>
           </div>
           <div className="card">
-            <Img
-              style={imageStyles}
-              fluid={data.dudatransportImage.childImageSharp.fluid}
-            />
-            <h2>Duda Transport Website</h2>
-            <div className="text-more">
-              <div>
-                <h4>The technology behind this website:</h4>
-                <img className="tech-icon" src={reactjs_icon} alt="react" />
-                <img className="tech-icon" src={gatsby_icon} alt="gatsby" />
-                <img className="tech-icon" src={netlify_icon} alt="netlify" />
-                <p>React, Gatbsyjs, Netlify, among others...</p>
+            <Link to="/portfolio/dudatransport">
+              <Img
+                style={imageStyles}
+                fluid={data.dudatransportImage.childImageSharp.fluid}
+              />
+              <h2>Duda Transport</h2>
+              <div className="text-more">
+                <div>
+                  <h4>The technology behind this website:</h4>
+                  <img className="tech-icon" src={reactjs_icon} alt="react" />
+                  <img className="tech-icon" src={gatsby_icon} alt="gatsby" />
+                  <img className="tech-icon" src={netlify_icon} alt="netlify" />
+                  <p>React, Gatbsyjs, Netlify, among others...</p>
+                </div>
+                <div>
+                  <Link to="/portfolio/dudatransport">
+                    <Button
+                      width="20rem"
+                      buttonTitle="know more"
+                      className="fromLeft"
+                      color="light"
+                    />
+                  </Link>
+                </div>
               </div>
-              <div>
-                <Link to="/portfolio/dudatransport">
-                  <Button
-                    width="20rem"
-                    buttonTitle="know more"
-                    className="fromLeft"
-                    color="light"
-                  />
-                </Link>
-              </div>
-            </div>
+            </Link>
           </div>
         </GalleryContainer>
       )

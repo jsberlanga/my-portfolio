@@ -12,9 +12,9 @@ export default () => (
     <SEO title="Portfolio" keywords={[`gatsby`, `application`, `react`]} />
     <HeaderSection>
       <h5 style={{ fontStyle: "italic" }}>
-        Check out some projects I've created
+        These are some projects I've created
       </h5>
-      <h1>My work</h1>
+      <h1>Check out my work</h1>
     </HeaderSection>
     <Portfolio />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />

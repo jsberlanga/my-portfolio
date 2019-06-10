@@ -34,6 +34,7 @@ const MainSection = styled.section`
     transform: skew(15deg);
     letter-spacing: -2px;
   }
+
   @media (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -144,7 +145,13 @@ const About = () => (
             }}
           >
             <div>
-              <h5 style={{ fontWeight: 600, fontStyle: "italic" }}>
+              <h5
+                style={{
+                  fontWeight: 600,
+                  fontStyle: "italic",
+                  transform: "skew(0)",
+                }}
+              >
                 resume
                 <FaRegFilePdf
                   style={{ fontSize: "2.5rem", marginTop: "0.3rem" }}
