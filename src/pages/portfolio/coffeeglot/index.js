@@ -81,7 +81,6 @@ export default () => (
 
     <ProjectWrapper>
       <div className="icons">
-        <h5>Go ahead and check the code & the website:</h5>
         <a
           href="https://github.com/jsberlanga/coffeeglot"
           rel="noopener noreferrer"
@@ -96,85 +95,92 @@ export default () => (
         >
           <IoIosGlobe />
         </a>
+        <h5>Go ahead and check the code & the website:</h5>
       </div>
-      <div className="text">
-        <div className="text__technology">
-          <h5>For creating this website I used the following technology:</h5>
-          <p>
-            For the Frontend I used<b> Reactjs</b> for building the interface
-            together with
-            <b> Nextjs</b> for the server side rendering and routing. For Data
-            Management I used <b>Apollo Client</b> for performing the GraphQL
-            Mutations and Queries. And last but not least{" "}
-            <b> Styled components</b> for styling React components.
-          </p>
-          <p>
-            For the Backend I used a <b>Yoga Server</b> for the Mutation and
-            Query Resolvers and <b>Prisma,</b> the glue between the database and
-            the GraphQL server.
-          </p>
-          <p>
-            And finally <b>Heroku</b> for deploying both the backend and the
-            frontend of the app.
-          </p>
-        </div>
-        <div className="text__functionality">
-          <h5>Functionality:</h5>
-          <p>
-            I created this website as an idea from a Cafe owner point of view
-            where they could offer their spot to teachers and students. This
-            website is intended for those teachers and students to promote their
-            courses and join them.
-          </p>
-        </div>
-      </div>
-      <StaticQuery
-        query={GET_IMAGES}
-        render={data => {
-          return (
-            <div className="images">
-              <Img
-                style={imageStyles}
-                fluid={data.imageOne.childImageSharp.fluid}
-              />
-              <Img
-                style={imageStyles}
-                fluid={data.imageTwo.childImageSharp.fluid}
-              />
-              <Img
-                style={imageStyles}
-                fluid={data.imageThree.childImageSharp.fluid}
-              />
-              <Img
-                style={imageStyles}
-                fluid={data.imageFour.childImageSharp.fluid}
-              />
-              <Img
-                style={imageStyles}
-                fluid={data.imageFive.childImageSharp.fluid}
-              />
-              <Img
-                style={imageStyles}
-                fluid={data.imageSix.childImageSharp.fluid}
-              />
+      <div className="content">
+        <div className="left">
+          <div className="text">
+            <div className="text__technology">
+              <h5>
+                For creating this website I used the following technology:
+              </h5>
               <p>
-                <Link to="/portfolio">
-                  Go back to my{" "}
-                  <span
-                    style={{
-                      color: "#eac100",
-                      borderBottom: "2px solid #eac100",
-                      cursor: "pointer",
-                    }}
-                  >
-                    portfolio
-                  </span>
-                </Link>
+                For the Frontend I used<b> Reactjs</b> for building the
+                interface together with
+                <b> Nextjs</b> for the server side rendering and routing. For
+                Data Management I used <b>Apollo Client</b> for performing the
+                GraphQL Mutations and Queries. And last but not least{" "}
+                <b> Styled components</b> for styling React components.
+              </p>
+              <p>
+                For the Backend I used a <b>Yoga Server</b> for the Mutation and
+                Query Resolvers and <b>Prisma,</b> the glue between the database
+                and the GraphQL server.
+              </p>
+              <p>
+                And finally <b>Heroku</b> for deploying both the backend and the
+                frontend of the app.
               </p>
             </div>
-          )
-        }}
-      />
+            <div className="text__functionality">
+              <h5>Functionality:</h5>
+              <p>
+                I created this website as an idea from a Cafe owner point of
+                view where they could offer their spot to teachers and students.
+                This website is intended for those teachers and students to
+                promote their courses and join them.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="right">
+          <StaticQuery
+            query={GET_IMAGES}
+            render={data => {
+              return (
+                <div className="images">
+                  <Img
+                    style={imageStyles}
+                    fluid={data.imageOne.childImageSharp.fluid}
+                  />
+                  <Img
+                    style={imageStyles}
+                    fluid={data.imageTwo.childImageSharp.fluid}
+                  />
+                  <Img
+                    style={imageStyles}
+                    fluid={data.imageThree.childImageSharp.fluid}
+                  />
+                  <Img
+                    style={imageStyles}
+                    fluid={data.imageFour.childImageSharp.fluid}
+                  />
+                  <Img
+                    style={imageStyles}
+                    fluid={data.imageFive.childImageSharp.fluid}
+                  />
+                  <Img
+                    style={imageStyles}
+                    fluid={data.imageSix.childImageSharp.fluid}
+                  />
+                </div>
+              )
+            }}
+          />
+        </div>
+      </div>
+      <Link to="/portfolio">
+        Go back to my{" "}
+        <span
+          style={{
+            color: "#eac100",
+            borderBottom: "2px solid #eac100",
+            cursor: "pointer",
+          }}
+        >
+          portfolio
+        </span>
+      </Link>
     </ProjectWrapper>
   </Layout>
 )

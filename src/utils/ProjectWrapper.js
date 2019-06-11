@@ -5,68 +5,75 @@ const ProjectWrapper = styled.div`
   max-width: 80vw;
   margin: 0 auto;
   text-align: center;
+
+  .content {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-gap: 1.8rem;
+
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+    }
+    .right {
+      height: 80vh;
+      overflow: scroll;
+    }
+  }
+
   .text {
     text-align: left;
+
     h5 {
       font-style: italic;
       margin: 1rem 0 1rem;
     }
-    display: grid;
-    grid-template-columns: 3.3fr 1fr;
-    grid-gap: 2rem;
-    margin: 2rem 0;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
   }
+
   .text__functionality {
     padding: 1rem;
     p {
       font-style: italic;
     }
   }
+
   .text__technology {
     background: #eeeeee;
     padding: 1rem;
   }
-  .images {
-    display: grid;
-    grid-gap: 2rem;
-  }
+
   .icons {
     text-align: center;
-    background: ${colors.mainDark};
+    background: ${colors.darkGray};
     color: ${colors.mainLight};
-    padding: 2rem 0 1rem;
-    max-width: 44rem;
+    padding: 1.2rem 0 0.4rem;
+    max-width: 40rem;
     margin: 0 auto;
     transition: all 0.4s;
 
     h5 {
       margin-bottom: 1rem;
+      font-style: italic;
+      transform: skew(15deg);
+      font-weight: 400;
     }
     a {
       font-size: 5rem;
       cursor: pointer;
       margin: 1.4rem;
       line-height: 1;
-      /* :hover { */
-        /* transition: all 0.2s; */
-        /* color: ${colors.gray}; */
-        /* filter: drop-shadow(25px 2px 0px ${colors.yellow}); */
-      /* } */
     }
 
     svg {
       :hover {
         transition: all 0.2s ease;
-        /* filter: invert(0.5) sepia(1) hue-rotate(366deg) saturate(4)
-          brightness(1); */
         transform: scale(1.05);
         color: ${colors.gray};
       }
     }
+  }
+  @media (max-width: 1200px) {
+    max-width: 85vw;
   }
   @media (max-width: 420px) {
     max-width: 95vw;
