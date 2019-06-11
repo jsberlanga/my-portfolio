@@ -72,7 +72,7 @@ export default () => (
   <Layout>
     <HeaderSection>
       <SEO
-        title="Sourdough Bakers Project"
+        title="Coffeeglot Project"
         keywords={[`gatsby`, `application`, `react`]}
       />
       <h5>A webapp for organizing language courses</h5>
