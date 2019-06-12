@@ -27,7 +27,7 @@ const Navbar = () => {
       <NavbarHeader handleNavbar={handleNavbar} />
       <NavbarLinks navbarOpen={navbarOpen} />
       <NavbarIcons />
-      <DarkModeToggle />
+      <DarkModeToggle navbarOpen={navbarOpen} />
     </NavWrapper>
   )
 }

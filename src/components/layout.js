@@ -98,6 +98,9 @@ const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
+  @media (max-width: 768px) {
+    display: none
+  }
 }
 
 .toggle-control {

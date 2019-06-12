@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
   .toggle-icon {
     font-size: 1.75rem;
     cursor: pointer;
-    color: ${styles.colors.mainDark};
+    /* color: ${styles.colors.mainDark}; */
   }
   @media (min-width: 768px) {
     .toggle-icon {
