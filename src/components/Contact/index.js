@@ -29,14 +29,15 @@ const StyledForm = styled.form`
   grid-gap: 0.1rem 1.4rem;
   input,
   textarea {
-    border-bottom: 1px solid rgba(16, 49, 107, 0.5);
-    font-style: italic;
+    border-bottom: 1px solid rgba(16, 49, 107, 0.1);
+    /* font-style: italic; */
+    font-weight: 400;
     color: ${styles.colors.darkGray};
     padding: 0.7rem;
 
     ::placeholder {
       opacity: 0.7;
-      color: ${styles.colors.darkBlue};
+      color: ${styles.colors.darkGray};
     }
     :focus {
       border-bottom: 1px solid rgba(16, 49, 107, 0.9);

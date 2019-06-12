@@ -45,6 +45,7 @@ const MainSection = styled.section`
 
 const AboutMeSection = styled.section`
   padding: 2rem 3em;
+  color: ${styles.colors.mainDark};
   background: #eeeeee;
   a {
     text-decoration: underline;
@@ -57,13 +58,13 @@ const AboutMeSection = styled.section`
 `
 
 const TechnologiesSection = styled.section`
-  filter: grayscale(20%);
   padding: 2rem 3rem;
   display: grid;
   h3 {
     margin-left: 1rem;
   }
   li {
+    filter: grayscale(20%);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -105,6 +106,8 @@ const MoreAboutMeSection = styled.section`
   padding: 2rem 3rem;
   margin: 2rem 0;
   background: #eeeeee;
+  color: ${styles.colors.mainDark};
+
   h2 {
     margin-bottom: 1rem;
   }

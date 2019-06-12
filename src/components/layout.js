@@ -20,10 +20,129 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     line-height: 1.5;
     font-size: 1.2rem;
-    color: ${styles.colors.mainDark};
-    background: ${styles.colors.mainLight};
-
   }
+
+
+  /* USE DARKMODE TOGGLE  START*/
+  body.light-mode {
+  background-color: ${styles.colors.mainLight};
+  color: ${styles.colors.mainDark};;
+  transition: background-color 0.3s ease;
+  }
+
+  body.dark-mode {
+  background-color: ${styles.colors.mainDark};
+  color: ${styles.colors.mainLight};
+
+  section {
+  background-color: ${styles.colors.mainDark2};
+  color: ${styles.colors.mainLight};
+  }
+
+  .card {
+    background-color: ${styles.colors.mainDark2};
+    color: ${styles.colors.mainLight};
+    h2{color: ${styles.colors.pink}}
+  }
+
+  form {
+    input,
+    textarea {
+      border-bottom: 1px solid rgba(131, 164, 222, 0.3);
+      color: ${styles.colors.mainLight};
+      :focus {
+        color: ${styles.colors.mainLight};
+        background: ${styles.colors.mainDark2};
+        ::placeholder {
+        color: ${styles.colors.mainLight};
+      }
+      }
+      ::placeholder {
+        color: ${styles.colors.mainLight}
+      }
+    }
+
+    button {
+      &:hover {
+        background-color: ${styles.colors.pink};
+        }
+      }
+    }
+
+  .text__technology, .icons {
+      background: ${styles.colors.mainDark2};
+    }
+  
+  .dark-mode-toggle > button {
+    color: #999;
+    &:last-child {
+      color: ${styles.colors.pink};
+    }
+  }
+}
+
+.dark-mode-toggle {
+  display: flex;
+  & > button {
+    font-size: 1.3em;
+    background: none;
+    border: none;
+    color: ${styles.colors.yellow2};
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:last-child {
+      color: #666;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.toggle-control {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox'].dmcheck {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+
+  &:checked + label {
+    left: 30px;
+  }
+
+  &:focus-visible {
+    outline: solid 2px white;
+  }
+
+  & + label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 2px;
+    background: #fff;
+    opacity: 0.9;
+    background-color: #f6f6f6;
+  }
+}
+/* USE DARKMODE TOGGLE END */
 
 p {margin-bottom: 0.85em;}
 

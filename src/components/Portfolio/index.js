@@ -3,7 +3,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-import { Button } from "../../utils"
+import { styles, Button } from "../../utils"
 
 import {
   apollo_icon,
@@ -58,7 +58,6 @@ const GET_IMAGES = graphql`
   }
 `
 const imageStyles = {
-  boxShadow: "1px 1px 10px -5px lightgrey",
   marginBottom: "2rem",
   filter: " grayscale(20%) blur(0.2px)",
 }
@@ -69,6 +68,7 @@ const GalleryContainer = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 2fr;
   grid-row-gap: 2rem;
+  color: ${styles.colors.mainDark};
 
   .card {
     background: #eeeeee;
@@ -90,6 +90,7 @@ const GalleryContainer = styled.div`
     font-style: italic;
     margin: -1.4rem auto 2rem;
     text-decoration: underline;
+    text-decoration-style: double;
   }
   h4 {
     font-style: italic;
