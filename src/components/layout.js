@@ -202,7 +202,7 @@ const PageContainer = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   max-width: 80rem;
-  width: 95vw;
+  width: 90vw;
   padding-bottom: 4.5rem;
 `
 

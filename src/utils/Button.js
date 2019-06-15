@@ -16,6 +16,10 @@ const StyledButton = styled.div`
   position: relative;
   font-style: italic;
 
+  @media (max-width: 420px) {
+    width: 15rem;
+  }
+
   color: ${props => props.color === "light" && `${styles.colors.mainLight}`};
   transition: all 0.4s;
   :hover {

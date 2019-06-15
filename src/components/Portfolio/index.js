@@ -123,9 +123,6 @@ const GalleryContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5rem;
   }
-  button {
-    filter: grayscale(0%);
-  }
 `
 
 const Portfolio = () => (
