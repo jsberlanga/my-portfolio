@@ -17,7 +17,7 @@ const StyledButton = styled.div`
   font-style: italic;
 
   @media (max-width: 420px) {
-    width: 15rem;
+    max-width: 15rem;
   }
 
   color: ${props => props.color === "light" && `${styles.colors.mainLight}`};
