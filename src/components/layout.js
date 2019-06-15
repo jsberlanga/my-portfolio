@@ -42,6 +42,8 @@ const GlobalStyle = createGlobalStyle`
   .card {
     background-color: ${styles.colors.mainDark2};
     color: ${styles.colors.mainLight};
+    border: 1.5px solid ${styles.colors.pink};
+    box-shadow: 8px 8px 0px -2px ${styles.colors.pink};
     h2{color: ${styles.colors.pink}}
   }
 

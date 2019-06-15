@@ -15,6 +15,7 @@ const StyledButton = styled.div`
   cursor: pointer;
   position: relative;
   font-style: italic;
+
   color: ${props => props.color === "light" && `${styles.colors.mainLight}`};
   transition: all 0.4s;
   :hover {

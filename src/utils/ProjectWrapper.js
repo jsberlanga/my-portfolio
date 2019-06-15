@@ -16,7 +16,7 @@ const ProjectWrapper = styled.div`
       grid-template-columns: 1fr;
     }
     .right {
-      height: 80vh;
+      height: 78vh;
       overflow: scroll;
     }
   }
@@ -26,6 +26,7 @@ const ProjectWrapper = styled.div`
 
     h5 {
       font-style: italic;
+      transform: skew(15deg);
       margin: 1rem 0 1rem;
     }
   }
@@ -34,6 +35,13 @@ const ProjectWrapper = styled.div`
     padding: 1rem;
     p {
       font-style: italic;
+      transform: skew(5deg);
+      &:before {
+        content: " - ";
+      }
+      &:after {
+        content: " - ";
+      }
     }
   }
 

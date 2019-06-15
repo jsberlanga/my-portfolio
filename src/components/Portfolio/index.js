@@ -29,7 +29,7 @@ const GET_IMAGES = graphql`
       }
     }
     sourdoughbakersImage: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageOne.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageOne.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -59,7 +59,9 @@ const GET_IMAGES = graphql`
 `
 const imageStyles = {
   marginBottom: "2rem",
-  filter: " grayscale(20%) blur(0.2px)",
+  filter: "grayscale(40%) blur(0.2px)",
+  backgroundColor: "#364f6b",
+  opacity: "0.85",
 }
 
 const GalleryContainer = styled.div`
@@ -73,6 +75,16 @@ const GalleryContainer = styled.div`
   .card {
     background: #eeeeee;
     box-shadow: 7px 7px 10px -10px #414f5d;
+    transition: all 0.2s;
+    :hover {
+      /* background: linear-gradient(
+        180deg,
+        rgba(222, 225, 236, 0.1) 40%,
+        rgba(222, 225, 236, 0.1) 100%
+      ); */
+      filter: brightness(104%);
+      transform: scale(1.007);
+    }
   }
   .tech-icon {
     margin: 0.4rem;
@@ -97,10 +109,12 @@ const GalleryContainer = styled.div`
     margin: 0.4rem 0;
     letter-spacing: -0.5px;
     font-weight: 400;
+    transform: skew(15deg);
   }
   p {
     font-style: italic;
     font-size: 1.1rem;
+    transform: skew(15deg);
   }
   .text-more {
     margin: 2rem 0;
@@ -123,6 +137,7 @@ const Portfolio = () => (
           <div className="card">
             <Link to="/portfolio/coffeeglot">
               <Img
+                className="image2"
                 style={imageStyles}
                 fluid={data.coffeeglotImage.childImageSharp.fluid}
               />

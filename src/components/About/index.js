@@ -114,12 +114,14 @@ const MoreAboutMeSection = styled.section`
   h5 {
     margin-top: 2rem;
     font-style: italic;
+    transform: skew(15deg);
   }
   p {
     margin-left: 1rem;
   }
   .date {
     font-style: italic;
+    transform: skew(15deg);
     font-size: 1.1rem;
     margin-left: 0;
   }
