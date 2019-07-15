@@ -230,7 +230,7 @@ const About = () => (
           <ul>
             <li>
               <img src={js_icon} alt="js" />
-              <p>ES6 Javascript</p>
+              <p>Javascript</p>
             </li>
             <li>
               <img src={html5_icon} alt="html5" />

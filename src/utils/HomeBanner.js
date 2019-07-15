@@ -5,7 +5,11 @@ import { HomeButton } from "./HomeButton"
 const HomeBanner = ({ bannerTitle }) => {
   return (
     <div
-      style={{ letterSpacing: "1.7px", fontWeight: 700, fontStyle: "italic" }}
+      style={{
+        fontStyle: "italic",
+        transform: "skew(5deg)",
+        letterSpacing: "0.2px",
+      }}
     >
       <h4 style={{ marginBottom: "0.4rem" }}>{bannerTitle}</h4>
       <Link to="/portfolio">

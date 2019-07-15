@@ -46,6 +46,7 @@ const ImageWrapper = styled.div`
 const Section = styled.div`
   transform: rotate(-2deg);
   margin: 2rem;
+
   @media (max-width: 768px) {
     transform: rotate(-4deg);
     .home-greeting {
