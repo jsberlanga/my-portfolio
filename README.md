@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#">
+  <a href="https://juliosoto.dev" target="_blank">
     <img alt="myportfolio" src="./src/images/landing.png" width="500" />
   </a>
 </p>
