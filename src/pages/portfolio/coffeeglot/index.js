@@ -12,7 +12,7 @@ import { imageStyles } from "../../../components/Portfolio"
 
 const GET_IMAGES = graphql`
   {
-    imageOne: file(relativePath: { eq: "portfolio/coffeeglot/imageOne.png" }) {
+    imageOne: file(relativePath: { eq: "portfolio/coffeeglot/imageOne.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -20,7 +20,7 @@ const GET_IMAGES = graphql`
       }
     }
 
-    imageTwo: file(relativePath: { eq: "portfolio/coffeeglot/imageTwo.png" }) {
+    imageTwo: file(relativePath: { eq: "portfolio/coffeeglot/imageTwo.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -28,7 +28,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageThree: file(
-      relativePath: { eq: "portfolio/coffeeglot/imageThree.png" }
+      relativePath: { eq: "portfolio/coffeeglot/imageThree.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -37,7 +37,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageFour: file(
-      relativePath: { eq: "portfolio/coffeeglot/imageFour.png" }
+      relativePath: { eq: "portfolio/coffeeglot/imageFour.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -46,7 +46,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageFive: file(
-      relativePath: { eq: "portfolio/coffeeglot/imageFive.png" }
+      relativePath: { eq: "portfolio/coffeeglot/imageFive.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -54,7 +54,7 @@ const GET_IMAGES = graphql`
         }
       }
     }
-    imageSix: file(relativePath: { eq: "portfolio/coffeeglot/imageSix.png" }) {
+    imageSix: file(relativePath: { eq: "portfolio/coffeeglot/imageSix.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_tracedSVG

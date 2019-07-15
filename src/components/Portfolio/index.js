@@ -20,7 +20,7 @@ import {
 const GET_IMAGES = graphql`
   {
     dudatransportImage: file(
-      relativePath: { eq: "portfolio/dudatransport/main.png" }
+      relativePath: { eq: "portfolio/dudatransport/main.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -29,7 +29,7 @@ const GET_IMAGES = graphql`
       }
     }
     sourdoughbakersImage: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageOne.jpg" }
+      relativePath: { eq: "portfolio/sourdoughbakers/main.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -38,7 +38,7 @@ const GET_IMAGES = graphql`
       }
     }
     skinnyalfredoImage: file(
-      relativePath: { eq: "portfolio/skinnyalfredo/imageOne.png" }
+      relativePath: { eq: "portfolio/skinnyalfredo/main.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -47,7 +47,7 @@ const GET_IMAGES = graphql`
       }
     }
     coffeeglotImage: file(
-      relativePath: { eq: "portfolio/coffeeglot/imageOne.jpg" }
+      relativePath: { eq: "portfolio/coffeeglot/main.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -132,13 +132,12 @@ const Portfolio = () => (
       return (
         <GalleryContainer>
           <div className="card">
-            <Link to="/portfolio/coffeeglot">
+            <Link to="/portfolio/sourdoughbakers">
               <Img
-                className="image2"
                 style={imageStyles}
-                fluid={data.coffeeglotImage.childImageSharp.fluid}
+                fluid={data.sourdoughbakersImage.childImageSharp.fluid}
               />
-              <h2>Coffeeglot</h2>
+              <h2>Sourdough Bakers</h2>
               <div className="text-more">
                 <div>
                   <h4>The technology behind this website:</h4>
@@ -154,7 +153,7 @@ const Portfolio = () => (
                   </p>
                 </div>
                 <div>
-                  <Link to="/portfolio/coffeeglot">
+                  <Link to="/portfolio/sourdoughbakers">
                     <Button
                       width="20rem"
                       buttonTitle="know more"
@@ -195,13 +194,15 @@ const Portfolio = () => (
               </div>
             </Link>
           </div>
+
           <div className="card">
-            <Link to="/portfolio/sourdoughbakers">
+            <Link to="/portfolio/coffeeglot">
               <Img
+                className="image2"
                 style={imageStyles}
-                fluid={data.sourdoughbakersImage.childImageSharp.fluid}
+                fluid={data.coffeeglotImage.childImageSharp.fluid}
               />
-              <h2>Sourdough Bakers</h2>
+              <h2>Coffeeglot</h2>
               <div className="text-more">
                 <div>
                   <h4>The technology behind this website:</h4>
@@ -217,7 +218,7 @@ const Portfolio = () => (
                   </p>
                 </div>
                 <div>
-                  <Link to="/portfolio/sourdoughbakers">
+                  <Link to="/portfolio/coffeeglot">
                     <Button
                       width="20rem"
                       buttonTitle="know more"

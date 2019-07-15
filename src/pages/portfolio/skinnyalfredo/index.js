@@ -13,7 +13,7 @@ import { imageStyles } from "../../../components/Portfolio"
 const GET_IMAGES = graphql`
   {
     imageTwo: file(
-      relativePath: { eq: "portfolio/skinnyalfredo/imageTwo.png" }
+      relativePath: { eq: "portfolio/skinnyalfredo/imageOne.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {

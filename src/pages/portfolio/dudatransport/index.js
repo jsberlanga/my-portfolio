@@ -13,7 +13,7 @@ import { imageStyles } from "../../../components/Portfolio"
 const GET_IMAGES = graphql`
   {
     imageOne: file(
-      relativePath: { eq: "portfolio/dudatransport/imageOne.png" }
+      relativePath: { eq: "portfolio/dudatransport/imageOne.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -22,7 +22,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageTwo: file(
-      relativePath: { eq: "portfolio/dudatransport/imageTwo.png" }
+      relativePath: { eq: "portfolio/dudatransport/imageTwo.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -31,7 +31,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageThree: file(
-      relativePath: { eq: "portfolio/dudatransport/imageThree.png" }
+      relativePath: { eq: "portfolio/dudatransport/imageThree.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -40,7 +40,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageFour: file(
-      relativePath: { eq: "portfolio/dudatransport/imageFour.png" }
+      relativePath: { eq: "portfolio/dudatransport/imageFour.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {

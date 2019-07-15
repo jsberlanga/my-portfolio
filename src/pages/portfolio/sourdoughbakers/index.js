@@ -13,7 +13,7 @@ import { imageStyles } from "../../../components/Portfolio"
 const GET_IMAGES = graphql`
   {
     imageOne: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageOne.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageOne.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -22,7 +22,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageTwo: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageTwo.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageTwo.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -31,7 +31,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageThree: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageThree.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageThree.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -40,7 +40,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageFour: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageFour.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageFour.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -49,7 +49,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageFive: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageFive.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageFive.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
@@ -58,7 +58,7 @@ const GET_IMAGES = graphql`
       }
     }
     imageSix: file(
-      relativePath: { eq: "portfolio/sourdoughbakers/imageSix.png" }
+      relativePath: { eq: "portfolio/sourdoughbakers/imageSix.jpg" }
     ) {
       childImageSharp {
         fluid(maxWidth: 1920) {
