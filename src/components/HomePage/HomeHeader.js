@@ -63,6 +63,10 @@ const ImageWrapper = styled.div`
 const Section = styled.div`
   transform: rotate(-2deg);
   margin: 2rem;
+  h1,
+  h3 {
+    letter-spacing: -1.5px;
+  }
 
   @media (max-width: 768px) {
     transform: rotate(-4deg);

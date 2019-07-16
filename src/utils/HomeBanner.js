@@ -7,11 +7,13 @@ const HomeBanner = ({ bannerTitle }) => {
     <div
       style={{
         fontStyle: "italic",
-        transform: "skew(5deg)",
-        letterSpacing: "0.2px",
+        transform: "skew(10deg)",
+        letterSpacing: "-1px",
       }}
     >
-      <h4 style={{ marginBottom: "0.4rem" }}>{bannerTitle}</h4>
+      <h4 style={{ marginBottom: "0.4rem", fontSize: "1.5em" }}>
+        {bannerTitle}
+      </h4>
       <Link to="/portfolio">
         <HomeButton buttonTitle="visit my portfolio" />
       </Link>

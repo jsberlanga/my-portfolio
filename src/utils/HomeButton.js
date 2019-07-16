@@ -14,7 +14,7 @@ const StyledButton = styled.div`
     rgba(245, 245, 245, 0.4) 100%
   );
   text-align: right;
-  width: 20rem;
+  max-width: 20rem;
   margin: 0 auto;
   border-radius: 5rem;
   cursor: pointer;
@@ -45,7 +45,7 @@ const HomeButton = ({ buttonTitle }) => {
   return (
     <StyledButton>
       <FiArrowRightCircle className="icon" />
-      <h5>{buttonTitle}</h5>
+      <h5 style={{ fontSize: "1.7rem" }}>{buttonTitle}</h5>
     </StyledButton>
   )
 }
