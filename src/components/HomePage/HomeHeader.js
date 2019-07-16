@@ -54,6 +54,9 @@ const ImageWrapper = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    h3 {
+      font-size: 1.5em;
+    }
   }
 `
 
@@ -76,7 +79,7 @@ const HomeHeader = () => (
         <h1>Hi, I'm Julio</h1>
         <h3>
           <span className="home-greeting">I'm happy you're here!</span> Welcome
-          to my website.
+          to my website
         </h3>
       </Section>
       <Section>
