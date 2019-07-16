@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import img from "../../images/reactjs.png"
+import img2 from "../../images/reactjs-two.png"
 import { styles } from "../../utils"
 import HomeBanner from "../../utils/HomeBanner"
 
@@ -41,6 +42,19 @@ const ImageWrapper = styled.div`
   clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
   border-top-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+
+  @media (max-width: 768px) {
+    background: linear-gradient(
+        to bottom,
+        rgba(54, 79, 107, 0.1) 0%,
+        rgba(54, 79, 107, 0.2) 50%,
+        rgba(54, 79, 107, 0.3) 100%
+      ),
+      url(${img2});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 `
 
 const Section = styled.div`
