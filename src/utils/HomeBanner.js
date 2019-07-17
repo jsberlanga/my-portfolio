@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { HomeButton } from "./HomeButton"
 
 const HomeBanner = ({ bannerTitle }) => {
+  const windowGlobal = typeof window !== "undefined" && window
   return (
     <div
       style={{
@@ -10,7 +11,7 @@ const HomeBanner = ({ bannerTitle }) => {
         letterSpacing: "-1px",
       }}
     >
-      {window.innerWidth > 768 && (
+      {windowGlobal.innerWidth > 768 && (
         <h4
           style={{
             marginBottom: "0.4rem",
