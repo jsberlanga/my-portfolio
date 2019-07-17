@@ -18,6 +18,9 @@ const StyledButton = styled.div`
   margin: 0 auto;
   border-radius: 5rem;
   cursor: pointer;
+  h4 {
+    font-size: 1.2rem;
+  }
   .icon {
     transition: all 0.5s ease-in-out;
     position: absolute;
@@ -45,7 +48,9 @@ const HomeButton = ({ buttonTitle }) => {
   return (
     <StyledButton>
       <FiArrowRightCircle className="icon" />
-      <h5 style={{ fontSize: "1.7rem" }}>{buttonTitle}</h5>
+      <h5 style={{ fontSize: "1.7rem", transform: "skew(10deg)" }}>
+        {buttonTitle}
+      </h5>
     </StyledButton>
   )
 }
