@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const HeaderSection = styled.div`
+const HeaderSection = styled.section`
   /* @keyframes moving {
     from {
       background-position: 0 0;

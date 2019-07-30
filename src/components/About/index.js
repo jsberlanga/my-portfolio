@@ -169,8 +169,8 @@ const About = () => (
         </a>
       </div>
     </HeaderSection>
-    <MainSection>
-      <AboutMeSection>
+    <MainSection data-testid="main-section">
+      <AboutMeSection data-testid="aboutme-section">
         <h2>a little about me</h2>
         <div>
           <p>
@@ -223,7 +223,7 @@ const About = () => (
           </p>
         </div>
       </AboutMeSection>
-      <TechnologiesSection>
+      <TechnologiesSection data-testid="technologies-section">
         <h2>technologies I've got experience with:</h2>
         <div>
           <h3>on the front-end</h3>
@@ -295,7 +295,7 @@ const About = () => (
         </div>
       </TechnologiesSection>
     </MainSection>
-    <MoreAboutMeSection>
+    <MoreAboutMeSection data-testid="moreaboutme-section">
       <h2>work experience</h2>
       <h5>Cloud Engineer / Capgemini Polska</h5>
       <p className="date">Kraków Nov 2017 - Present</p>
