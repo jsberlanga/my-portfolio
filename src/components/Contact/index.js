@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { navigateTo } from "gatsby-link"
+import { navigate } from "gatsby-link"
 
 import { styles, HeaderSection } from "../../utils"
 
@@ -128,27 +128,28 @@ class Contact extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...this.state,
-      }),
-    })
-      .then(() => {
-        if (
-          this.state.name === "" ||
-          this.state.email === "" ||
-          this.state.phone === "" ||
-          this.state.message === ""
-        )
-          return this.setState({ error: "Please fill out the form." })
-        else {
-          navigateTo(form.getAttribute("action"))
-        }
+
+    if (
+      this.state.name === "" ||
+      this.state.email === "" ||
+      this.state.phone === "" ||
+      this.state.message === ""
+    )
+      return this.setState({ error: "Please fill out the form." })
+    else {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...this.state,
+        }),
       })
-      .catch(error => alert(error))
+        .then(() => {
+          navigate(form.getAttribute("action"))
+        })
+        .catch(error => alert(error))
+    }
   }
   handleChange = e => {
     this.setState({ error: "" })
@@ -183,6 +184,9 @@ class Contact extends React.Component {
         >
           <input type="hidden" name="form-name" value="contact" />
           <input
+            autoFocus
+            autoCapitalize
+            autoComplete
             className="form-input-name"
             name="name"
             placeholder="Name"
