@@ -132,6 +132,7 @@ class Contact extends React.Component {
     if (
       this.state.name === "" ||
       this.state.email === "" ||
+      !this.state.email.includes("@") ||
       this.state.phone === "" ||
       this.state.message === ""
     )
@@ -148,7 +149,7 @@ class Contact extends React.Component {
         .then(() => {
           navigate(form.getAttribute("action"))
         })
-        .catch(error => alert(error))
+        .catch(error => console.log(error))
     }
   }
   handleChange = e => {
@@ -164,6 +165,7 @@ class Contact extends React.Component {
         </HeaderSection>
         {this.state.error && (
           <p
+            data-testid="error"
             style={{
               textAlign: "center",
               color: "#e4508f",
@@ -175,6 +177,7 @@ class Contact extends React.Component {
           </p>
         )}
         <StyledForm
+          data-testid="form"
           name="contact"
           method="post"
           action="/thanks/"
@@ -185,8 +188,7 @@ class Contact extends React.Component {
           <input type="hidden" name="form-name" value="contact" />
           <input
             autoFocus
-            autoCapitalize
-            autoComplete
+            aria-label="name-input"
             className="form-input-name"
             name="name"
             placeholder="Name"
@@ -194,6 +196,7 @@ class Contact extends React.Component {
             onChange={this.handleChange}
           />
           <input
+            aria-label="email-input"
             className="form-input-email"
             name="email"
             placeholder="Email"
@@ -201,6 +204,7 @@ class Contact extends React.Component {
             onChange={this.handleChange}
           />
           <input
+            aria-label="phone-input"
             className="form-input-phone"
             name="phone"
             placeholder="Phone Number"
@@ -208,12 +212,13 @@ class Contact extends React.Component {
             onChange={this.handleChange}
           />
           <textarea
+            aria-label="message-input"
             className="form-input-message"
             name="message"
             placeholder="Message"
             onChange={this.handleChange}
           />
-          <button type="submit" className="form-button" />
+          <button type="submit" className="form-button" data-testid="submit" />
         </StyledForm>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
       </>
