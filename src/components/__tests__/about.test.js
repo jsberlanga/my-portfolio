@@ -8,7 +8,7 @@ describe("<About />", () => {
   test.only("should render", () => {
     const { getByTestId, container } = render(<About />)
 
-    expect(container.querySelectorAll("section").length).toBe(5)
+    expect(container.querySelectorAll("section").length).toBe(4)
 
     const sections = [
       { name: "aboutme-section", title: "a little about me" },
