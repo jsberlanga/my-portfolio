@@ -48,7 +48,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "jest --env=jsdom --watch"
+    "test": "jest --env=jsdom --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",

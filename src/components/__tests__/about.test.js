@@ -5,10 +5,10 @@ import "@testing-library/jest-dom"
 import About from "../About"
 
 describe("<About />", () => {
-  test.only("should render", () => {
+  test("should render", () => {
     const { getByTestId, container } = render(<About />)
 
-    expect(container.querySelectorAll("section").length).toBe(5)
+    expect(container.querySelectorAll("section").length).toBe(4)
 
     const sections = [
       { name: "aboutme-section", title: "a little about me" },
