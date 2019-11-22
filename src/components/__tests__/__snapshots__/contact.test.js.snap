@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contact /> renders correctly 1`] = `
+<div>
+  <div
+    class="sc-bxivhb euYiQx"
+  >
+    <h5
+      style="font-style: italic;"
+    >
+      Go ahead and say hi!
+    </h5>
+    <h1>
+      Contact me
+    </h1>
+  </div>
+  
+  <form
+    action="/thanks/"
+    class="sc-EHOje dlZjOF"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    data-testid="form"
+    method="post"
+    name="contact"
+  >
+    <input
+      name="form-name"
+      type="hidden"
+      value="contact"
+    />
+    <input
+      aria-label="name-input"
+      class="form-input-name"
+      name="name"
+      placeholder="Name"
+      type="text"
+    />
+    <input
+      aria-label="email-input"
+      class="form-input-email"
+      name="email"
+      placeholder="Email"
+      type="email"
+    />
+    <input
+      aria-label="phone-input"
+      class="form-input-phone"
+      name="phone"
+      placeholder="Phone Number"
+      type="text"
+    />
+    <textarea
+      aria-label="message-input"
+      class="form-input-message"
+      name="message"
+      placeholder="Message"
+    />
+    <input
+      class="form-button"
+      data-testid="submit"
+      type="submit"
+      value="Send"
+    />
+  </form>
+  <div
+    style="max-width: 300px; margin-bottom: 1.45rem;"
+  />
+</div>
+`;

@@ -1,5 +1,7 @@
 import React from "react"
 import { render, fireEvent, wait } from "@testing-library/react"
+import { axe, toHaveNoViolations } from "jest-axe"
+expect.extend(toHaveNoViolations)
 
 import Contact from "../Contact"
 
@@ -7,10 +9,13 @@ global.fetch = require("jest-fetch-mock")
 global.___navigate = jest.fn()
 
 describe("<Contact />", () => {
-  test("renders", async () => {
-    const { debug, getByLabelText, getByTestId, queryByTestId } = render(
-      <Contact />
-    )
+  test("renders correctly", () => {
+    const { container } = render(<Contact />)
+    expect(container).toMatchSnapshot()
+  })
+
+  test("submits forms correctly", async () => {
+    const { getByLabelText, getByTestId, queryByTestId } = render(<Contact />)
 
     fireEvent.click(getByTestId("submit"))
     expect(getByTestId("error")).toBeVisible()
@@ -37,5 +42,13 @@ describe("<Contact />", () => {
 
     expect(global.fetch).toHaveBeenCalledTimes(1)
     expect(queryByTestId("error")).toBeFalsy()
+  })
+
+  test("does not have violations", async () => {
+    const { container } = render(<Contact />)
+
+    const results = await axe(container)
+
+    expect(results).toHaveNoViolations()
   })
 })
