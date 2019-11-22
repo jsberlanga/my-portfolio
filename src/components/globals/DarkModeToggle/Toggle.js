@@ -3,6 +3,7 @@ import React from "react"
 const Toggle = ({ checked, onChange }) => (
   <span className="toggle-control">
     <input
+      aria-label="dmcheck"
       className="dmcheck"
       type="checkbox"
       checked={checked}

@@ -164,6 +164,7 @@ exports[`Header renders correctly 1`] = `
         className="toggle-control"
       >
         <input
+          aria-label="dmcheck"
           checked={false}
           className="dmcheck"
           id="dmcheck"
