@@ -59,10 +59,10 @@ const StyledForm = styled.form`
       "button";
   }
 
-  button {
+  input[type="submit"] {
     background: ${styles.colors.yellow};
     color: ${styles.colors.mainLight};
-    padding: 1.4rem;
+    padding: 0.4rem 1rem;
     width: 7rem;
     margin: 1.2rem auto;
     cursor: pointer;
@@ -70,33 +70,14 @@ const StyledForm = styled.form`
     position: relative;
     transition: all 0.2s;
     box-shadow: 1px 1px 6px -2px gray;
+    text-align: center;
+
     &:hover {
       background-color: ${styles.colors.mainDark};
-    }
-    &:before {
-      transition: all 0.5s;
-      content: "Send";
-      position: absolute;
-      top: 15%;
-      left: 35%;
     }
     &:hover:before {
       opacity: 0;
       transition: all 0.5s;
-      transform: translate(7rem);
-    }
-    &:after {
-      content: "⇨";
-      position: absolute;
-      top: -15%;
-      left: -25%;
-      transition: all 0.5s;
-      opacity: 0;
-      letter-spacing: 2px;
-      font-size: 2.5rem;
-    }
-    &:hover:after {
-      opacity: 1;
       transform: translate(7rem);
     }
   }
@@ -218,7 +199,12 @@ class Contact extends React.Component {
             placeholder="Message"
             onChange={this.handleChange}
           />
-          <button type="submit" className="form-button" data-testid="submit" />
+          <input
+            type="submit"
+            className="form-button"
+            data-testid="submit"
+            value="Send"
+          />
         </StyledForm>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
       </>
