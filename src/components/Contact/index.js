@@ -60,7 +60,7 @@ const StyledForm = styled.form`
   }
 
   input[type="submit"] {
-    background: ${styles.colors.yellow};
+    background: ${styles.colors.darkPink};
     color: ${styles.colors.mainLight};
     padding: 0.4rem 1rem;
     width: 7rem;
@@ -79,6 +79,9 @@ const StyledForm = styled.form`
       opacity: 0;
       transition: all 0.5s;
       transform: translate(7rem);
+    }
+    &:focus {
+      border-bottom: 3px solid rgba(16, 49, 107, 0.9);
     }
   }
   .form-input-name {

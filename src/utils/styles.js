@@ -9,6 +9,7 @@ export const colors = {
   mainDark: "#364f6b", // rgba(54, 79, 107, 1)
   mainLight: "#f5f5f5",
   pink: "#FFB4D1",
+  darkPink: "#e4508f",
 }
 
 export const transitionDefault = "transition: all 0.3s ease-in-out"
