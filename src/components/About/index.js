@@ -199,8 +199,8 @@ const About = () => (
             </a>{" "}
             as an IT Operations Analyst for the 2nd level of support. Although I
             enjoyed every minute of my time there, the job was based in Warsaw
-            and for personal reasons I needed to move back to Krakow. And here I
-            am, working as a Cloud Engineer for{" "}
+            and for personal reasons I needed to move back to Krakow. And I got
+            a job as a Cloud Engineer for{" "}
             <a
               rel="noopener noreferrer"
               target="_blank"
@@ -210,8 +210,8 @@ const About = () => (
             </a>{" "}
           </p>
           <p>
-            Since late 2018 I've grown a love for web development. It started
-            all of a sudden and since then, I know that there is no turning back
+            Then in late 2018 I grew a love for web development. It started all
+            of a sudden and since then, I know that there is no turning back
             from here. I feel addicted to coding. I love it, every part of it,
             because it's challenging and fun and sometimes I get mad at it but I
             always find my way back to it, because I cannot stop thinking about

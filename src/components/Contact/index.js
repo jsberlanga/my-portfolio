@@ -149,6 +149,7 @@ class Contact extends React.Component {
         </HeaderSection>
         {this.state.error && (
           <p
+            role="alert"
             data-testid="error"
             style={{
               textAlign: "center",

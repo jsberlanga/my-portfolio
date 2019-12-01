@@ -1,10 +1,10 @@
 import React from "react"
-import { render, fireEvent, wait } from "@testing-library/react"
+import { render } from "@testing-library/react"
+import user from "@testing-library/user-event"
 import { axe, toHaveNoViolations } from "jest-axe"
-expect.extend(toHaveNoViolations)
-
 import Contact from "../Contact"
 
+expect.extend(toHaveNoViolations)
 global.fetch = require("jest-fetch-mock")
 global.___navigate = jest.fn()
 
@@ -14,41 +14,46 @@ describe("<Contact />", () => {
     expect(container).toMatchSnapshot()
   })
 
+  test("shows error message if form is incomplete", () => {
+    const { getByTestId, getByRole } = render(<Contact />)
+
+    user.click(getByTestId(/submit/))
+    expect(getByRole(/alert/)).toBeInTheDocument()
+  })
+
   test("submits forms correctly", async () => {
-    const { getByLabelText, getByTestId, queryByTestId } = render(<Contact />)
+    const { getByLabelText, getByTestId, getByRole, queryByRole } = render(
+      <Contact />
+    )
 
-    fireEvent.click(getByTestId("submit"))
-    expect(getByTestId("error")).toBeVisible()
-    const inputs = ["name-input", "phone-input", "message-input"]
+    const emailInput = getByLabelText(/email-input/i)
+    const otherInputs = ["name-input", "phone-input", "message-input"]
 
-    inputs.forEach(input => {
+    otherInputs.forEach(input => {
       let inputDOM = getByLabelText(input)
-      fireEvent.change(inputDOM, { target: { value: "qwerty" } })
+      user.type(inputDOM, "qwerty")
       expect(inputDOM.value).toBe("qwerty")
     })
 
-    fireEvent.change(getByLabelText("email-input"), {
-      target: { value: "test.com" },
-    })
+    // fireEvent.change(emailInput, { target: { value: "test.com" } })
+    user.type(emailInput, "notAnEmail.com")
 
-    fireEvent.click(getByTestId("submit"))
-    expect(getByTestId("error")).toBeVisible()
+    user.click(getByTestId(/submit/))
+    expect(getByRole(/alert/)).toBeInTheDocument()
 
-    fireEvent.change(getByLabelText("email-input"), {
-      target: { value: "test@test.com" },
-    })
-    fireEvent.click(getByTestId("submit"))
-    expect(queryByTestId("error")).toBeFalsy()
+    user.type(emailInput, "test@test.com")
+
+    user.click(getByTestId(/submit/))
+    expect(queryByRole(/alert/)).not.toBeInTheDocument()
 
     expect(global.fetch).toHaveBeenCalledTimes(1)
-    expect(queryByTestId("error")).toBeFalsy()
+    expect(queryByRole(/alert/)).not.toBeInTheDocument()
   })
 
   test("does not have violations", async () => {
     const { container } = render(<Contact />)
 
     const results = await axe(container)
-
     expect(results).toHaveNoViolations()
   })
 })
