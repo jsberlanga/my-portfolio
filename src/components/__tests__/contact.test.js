@@ -1,10 +1,9 @@
 import React from "react"
 import { render } from "@testing-library/react"
 import user from "@testing-library/user-event"
-import { axe, toHaveNoViolations } from "jest-axe"
+import { axe } from "jest-axe"
 import Contact from "../Contact"
 
-expect.extend(toHaveNoViolations)
 global.fetch = require("jest-fetch-mock")
 global.___navigate = jest.fn()
 
