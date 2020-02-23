@@ -17,7 +17,7 @@ exports[`<Contact /> renders correctly 1`] = `
   
   <form
     action="/thanks/"
-    class="sc-EHOje fhgSn"
+    class="sc-EHOje gQDNTF"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
     data-testid="form"
