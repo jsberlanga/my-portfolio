@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FiArrowRightCircle } from "react-icons/fi"
+import { styles } from "./index"
 
 const StyledButton = styled.div`
   display: flex;
@@ -18,6 +19,9 @@ const StyledButton = styled.div`
   margin: 0 auto;
   border-radius: 5rem;
   cursor: pointer;
+  h5 {
+    color: ${styles.colors.mainLight};
+  }
   h4 {
     font-size: 1.2rem;
   }

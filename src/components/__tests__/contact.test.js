@@ -14,7 +14,7 @@ describe("<Contact />", () => {
   })
 
   test("shows error message if form is incomplete", () => {
-    const { getByTestId, getByRole } = render(<Contact />)
+    const { debug, getByTestId, getByRole } = render(<Contact />)
 
     user.click(getByTestId(/submit/))
     expect(getByRole(/alert/)).toBeInTheDocument()
@@ -25,22 +25,16 @@ describe("<Contact />", () => {
       <Contact />
     )
 
-    const emailInput = getByLabelText(/email-input/i)
-    const otherInputs = ["name-input", "phone-input", "message-input"]
-
-    otherInputs.forEach(input => {
-      let inputDOM = getByLabelText(input)
-      user.type(inputDOM, "qwerty")
-      expect(inputDOM.value).toBe("qwerty")
-    })
-
-    // fireEvent.change(emailInput, { target: { value: "test.com" } })
-    user.type(emailInput, "notAnEmail.com")
+    user.type(getByLabelText(/name-input/i), "name")
+    user.type(getByLabelText(/message-input/i), "message")
+    user.type(getByLabelText(/email-input/i), "invalid email")
+    user.type(getByLabelText(/phone-input/i), "invalid phone")
 
     user.click(getByTestId(/submit/))
     expect(getByRole(/alert/)).toBeInTheDocument()
 
-    user.type(emailInput, "test@test.com")
+    user.type(getByLabelText(/email-input/i), "example@email.com")
+    user.type(getByLabelText(/phone-input/i), "123456789")
 
     user.click(getByTestId(/submit/))
     expect(queryByRole(/alert/)).not.toBeInTheDocument()
