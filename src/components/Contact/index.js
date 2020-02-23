@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useReducer } from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby-link"
 
@@ -100,14 +100,35 @@ const StyledForm = styled.form`
   }
 `
 
+const initialState = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+  error: "",
+}
+
+const contactReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_ERROR":
+      return {
+        ...state,
+        error: "Please fill out the form.",
+      }
+    case "SET_FIELDS":
+      const { field, value } = action
+      return {
+        ...state,
+        error: "",
+        [field]: value,
+      }
+    default:
+      return state
+  }
+}
+
 const Contact = () => {
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    error: "",
-  })
+  const [state, dispatch] = useReducer(contactReducer, initialState)
 
   const { name, email, phone, message, error } = state
 
@@ -117,11 +138,11 @@ const Contact = () => {
 
     if (
       name === "" ||
+      message === "" ||
       !/@/.test(email) ||
-      !/\W/.test(phone) ||
-      message === ""
+      !/[0-9]/.test(phone)
     ) {
-      return setState({ error: "Please fill out the form." })
+      return dispatch({ type: "SET_ERROR" })
     }
 
     fetch("/", {
@@ -137,9 +158,13 @@ const Contact = () => {
       })
       .catch(error => console.log(error))
   }
+
   const handleChange = e => {
-    setState({ error: "" })
-    setState({ [e.target.name]: e.target.value })
+    dispatch({
+      type: "SET_FIELDS",
+      field: e.target.name,
+      value: e.target.value,
+    })
   }
 
   return (
