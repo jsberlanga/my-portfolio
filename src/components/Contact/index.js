@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby-link"
 
@@ -30,7 +30,6 @@ const StyledForm = styled.form`
   input,
   textarea {
     border-bottom: 1px solid rgba(16, 49, 107, 0.1);
-    /* font-style: italic; */
     font-weight: 400;
     color: ${styles.colors.darkGray};
     padding: 0.7rem;
@@ -69,11 +68,11 @@ const StyledForm = styled.form`
     opacity: 0.9;
     position: relative;
     transition: all 0.2s;
-    box-shadow: 1px 1px 6px -2px gray;
     text-align: center;
 
     &:hover {
-      background-color: ${styles.colors.mainDark};
+      filter: brightness(1.1);
+      border-bottom: 8px double ${styles.colors.pink};
     }
     &:hover:before {
       opacity: 0;
@@ -101,33 +100,36 @@ const StyledForm = styled.form`
   }
 `
 
-class Contact extends React.Component {
-  state = {
+const Contact = () => {
+  const [state, setState] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
     error: "",
-  }
-  handleSubmit = e => {
+  })
+
+  const { name, email, phone, message, error } = state
+
+  const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
 
     if (
-      this.state.name === "" ||
-      this.state.email === "" ||
-      !this.state.email.includes("@") ||
-      this.state.phone === "" ||
-      this.state.message === ""
+      name === "" ||
+      email === "" ||
+      !email.includes("@") ||
+      phone === "" ||
+      message === ""
     )
-      return this.setState({ error: "Please fill out the form." })
+      return setState({ error: "Please fill out the form." })
     else {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": form.getAttribute("name"),
-          ...this.state,
+          ...state,
         }),
       })
         .then(() => {
@@ -136,84 +138,83 @@ class Contact extends React.Component {
         .catch(error => console.log(error))
     }
   }
-  handleChange = e => {
-    this.setState({ error: "" })
-    this.setState({ [e.target.name]: e.target.value })
+  const handleChange = e => {
+    setState({ error: "" })
+    setState({ [e.target.name]: e.target.value })
   }
-  render() {
-    return (
-      <>
-        <HeaderSection>
-          <h5 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h5>
-          <h1>Contact me</h1>
-        </HeaderSection>
-        {this.state.error && (
-          <p
-            role="alert"
-            data-testid="error"
-            style={{
-              textAlign: "center",
-              color: "#e4508f",
-              letterSpacing: "1px",
-              fontWeight: 700,
-            }}
-          >
-            {this.state.error}
-          </p>
-        )}
-        <StyledForm
-          data-testid="form"
-          name="contact"
-          method="post"
-          action="/thanks/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
+
+  return (
+    <>
+      <HeaderSection>
+        <h5 style={{ fontStyle: "italic" }}>Go ahead and say hi!</h5>
+        <h1>Contact me</h1>
+      </HeaderSection>
+      {error && (
+        <p
+          role="alert"
+          data-testid="error"
+          style={{
+            textAlign: "center",
+            color: "#e4508f",
+            letterSpacing: "1px",
+            fontWeight: 700,
+          }}
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <input
-            autoFocus
-            aria-label="name-input"
-            className="form-input-name"
-            name="name"
-            placeholder="Name"
-            type="text"
-            onChange={this.handleChange}
-          />
-          <input
-            aria-label="email-input"
-            className="form-input-email"
-            name="email"
-            placeholder="Email"
-            type="email"
-            onChange={this.handleChange}
-          />
-          <input
-            aria-label="phone-input"
-            className="form-input-phone"
-            name="phone"
-            placeholder="Phone Number"
-            type="text"
-            onChange={this.handleChange}
-          />
-          <textarea
-            aria-label="message-input"
-            className="form-input-message"
-            name="message"
-            placeholder="Message"
-            onChange={this.handleChange}
-          />
-          <input
-            type="submit"
-            className="form-button"
-            data-testid="submit"
-            value="Send"
-          />
-        </StyledForm>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
-      </>
-    )
-  }
+          {error}
+        </p>
+      )}
+      <StyledForm
+        data-testid="form"
+        name="contact"
+        method="post"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input
+          autoFocus
+          aria-label="name-input"
+          className="form-input-name"
+          name="name"
+          placeholder="Name"
+          type="text"
+          onChange={handleChange}
+        />
+        <input
+          aria-label="email-input"
+          className="form-input-email"
+          name="email"
+          placeholder="Email"
+          type="email"
+          onChange={handleChange}
+        />
+        <input
+          aria-label="phone-input"
+          className="form-input-phone"
+          name="phone"
+          placeholder="Phone Number"
+          type="text"
+          onChange={handleChange}
+        />
+        <textarea
+          aria-label="message-input"
+          className="form-input-message"
+          name="message"
+          placeholder="Message"
+          onChange={handleChange}
+        />
+        <input
+          type="submit"
+          className="form-button"
+          data-testid="submit"
+          value="Send"
+        />
+      </StyledForm>
+      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
+    </>
+  )
 }
 
 export default Contact
