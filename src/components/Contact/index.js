@@ -80,7 +80,7 @@ const StyledForm = styled.form`
       transform: translate(7rem);
     }
     &:focus {
-      border-bottom: 3px solid rgba(16, 49, 107, 0.9);
+      border-bottom: 8px double ${styles.colors.pink};
     }
   }
   .form-input-name {
@@ -117,26 +117,25 @@ const Contact = () => {
 
     if (
       name === "" ||
-      email === "" ||
-      !email.includes("@") ||
-      phone === "" ||
+      !/@/.test(email) ||
+      !/\W/.test(phone) ||
       message === ""
-    )
+    ) {
       return setState({ error: "Please fill out the form." })
-    else {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": form.getAttribute("name"),
-          ...state,
-        }),
-      })
-        .then(() => {
-          navigate(form.getAttribute("action"))
-        })
-        .catch(error => console.log(error))
     }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => {
+        navigate(form.getAttribute("action"))
+      })
+      .catch(error => console.log(error))
   }
   const handleChange = e => {
     setState({ error: "" })
