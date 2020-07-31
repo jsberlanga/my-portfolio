@@ -25,63 +25,77 @@ const GlobalStyle = createGlobalStyle`
 
   /* USE DARKMODE TOGGLE  START*/
   body.light-mode {
-  background-color: ${styles.colors.mainLight};
-  color: ${styles.colors.mainDark};;
-  transition: background-color 0.3s ease;
+    background-color: ${styles.colors.mainLight};
+    color: ${styles.colors.mainDark};;
+    transition: background-color 0.3s ease;
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: ${styles.colors.mainDark};
+    }
   }
 
   body.dark-mode {
-  background-color: ${styles.colors.mainDark};
-  color: ${styles.colors.mainLight};
+    background-color: ${styles.colors.mainDark};
+    color: ${styles.colors.mainLight};
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: ${styles.colors.mainLight};
+    }
 
-  section {
-  background-color: ${styles.colors.mainDark2};
-  color: ${styles.colors.mainLight};
-  }
-
-  .card {
+    section {
     background-color: ${styles.colors.mainDark2};
     color: ${styles.colors.mainLight};
-    border: 1.5px solid ${styles.colors.pink};
-    box-shadow: 8px 8px 0px -2px ${styles.colors.pink};
-    h2{color: ${styles.colors.pink}}
-  }
-
-  form {
-    input,
-    textarea {
-      border-bottom: 1px solid rgba(131, 164, 222, 0.3);
-      color: ${styles.colors.mainLight};
-      :focus {
-        color: ${styles.colors.mainLight};
-        background: ${styles.colors.mainDark2};
-        ::placeholder {
-        color: ${styles.colors.mainLight};
-      }
-      }
-      ::placeholder {
-        color: ${styles.colors.mainLight}
-      }
     }
 
-    button {
-      &:hover {
-        background-color: ${styles.colors.pink};
+    .card {
+      background-color: ${styles.colors.mainDark2};
+      color: ${styles.colors.mainLight};
+      border: 1.5px solid ${styles.colors.pink};
+      box-shadow: 8px 8px 0px -2px ${styles.colors.pink};
+      h2{color: ${styles.colors.pink}}
+    }
+
+    form {
+      input,
+      textarea {
+        border-bottom: 1px solid rgba(131, 164, 222, 0.3);
+        color: ${styles.colors.mainLight};
+        :focus {
+          color: ${styles.colors.mainLight};
+          background: ${styles.colors.mainDark2};
+          ::placeholder {
+          color: ${styles.colors.mainLight};
+        }
+        }
+        ::placeholder {
+          color: ${styles.colors.mainLight}
         }
       }
-    }
 
-  .text__technology, .icons {
-      background: ${styles.colors.mainDark2};
-    }
-  
-  .dark-mode-toggle > button {
-    color: #999;
-    &:last-child {
-      color: ${styles.colors.pink};
+      button {
+        &:hover {
+          background-color: ${styles.colors.pink};
+          }
+        }
+      }
+
+    .text__technology, .icons {
+        background: ${styles.colors.mainDark2};
+      }
+    
+    .dark-mode-toggle > button {
+      color: #999;
+      &:last-child {
+        color: ${styles.colors.pink};
+      }
     }
   }
-}
 
 .dark-mode-toggle {
   display: flex;

@@ -198,7 +198,6 @@ const Contact = () => {
       >
         <input type="hidden" name="form-name" value="contact" />
         <input
-          autoFocus
           aria-label="name-input"
           className="form-input-name"
           name="name"
