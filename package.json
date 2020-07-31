@@ -12,7 +12,7 @@
     "gatsby-plugin-manifest": "^2.0.25",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.11",
-    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-sharp": "^2.6.24",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-plugin-web-font-loader": "^1.0.4",
@@ -50,7 +50,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "jest --env=jsdom --watch",
+    "test": "jest --env=jsdom --watchAll",
     "test:coverage": "jest --coverage"
   },
   "repository": {
